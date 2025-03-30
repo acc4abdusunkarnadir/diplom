@@ -1,13 +1,14 @@
 <script setup>
 import WebHeader from "./components/WebHeader.vue";
 import WebFooter from "./components/WebFooter.vue";
+import MainContent from "./components/MainContent.vue";
 </script>
 
 <template>
   <div class="app-container">
     <WebHeader />
     <main class="content">
-     
+     <MainContent />
     </main>
     <WebFooter />
   </div>
@@ -23,9 +24,12 @@ import WebFooter from "./components/WebFooter.vue";
 }
 
 .content {
-  width: 100%;
+  width: 100vw;
   flex-grow: 1; /* Ensure it takes up all available space */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 </style>
