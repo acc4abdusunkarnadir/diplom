@@ -6,23 +6,26 @@ import WebFooter from "./components/WebFooter.vue";
 <template>
   <div class="app-container">
     <WebHeader />
-    <body class="content">
+    <main class="content">
       <router-view /> 
-  </body>
+  </main>
     <WebFooter />
   </div>
 </template>
 
 <style scoped>
+/* does not talk with screen, only with parent */
 .app-container {
-  width: 100vw !important;
+  width: 100%;
+  max-width: 100%; /* Ensures it doesn’t shrink */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+
 .content {
-  width: 100vw;
+  width: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;

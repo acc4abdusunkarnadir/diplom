@@ -1,49 +1,71 @@
 <template>
-    <div class="quiz-container">
+    <div class="quiz-container" v-if="currentIndex < words.length">
       <div class="progress-circle">
         <svg class="progress-ring" width="260" height="260">
           <circle class="bg-ring" cx="130" cy="130" r="120"></circle>
           <circle class="fg-ring" cx="130" cy="130" r="120"></circle>
         </svg>
         <div class="quiz-content">
-          <div class="top-left">
-            <p class="score-title">x2</p>
-            <p class="score-subtitle">есе көбейту</p>
-          </div>
           <div class="top-right">
-            <p class="score-title">30</p>
+            <p class="score-title">{{ score }}</p>
             <p class="score-subtitle">ұпай</p>
           </div>
           <div class="word-content">
-            <h2 class="word-main">Жалғыз</h2>
-            <p class="word-sub">Alone</p>
+            <h2 class="word-main">{{ words[currentIndex].kazakh }}</h2>
+            <input v-model="userAnswer" placeholder="Enter translation" class="answer-input"/>
           </div>
           <div class="button-group">
-            <button @click="answer(true)" class="correct-btn">Дұрыс</button>
-            <button @click="answer(false)" class="wrong-btn">Қате</button>
+            <button @click="checkAnswer" class="correct-btn">Submit</button>
           </div>
         </div>
       </div>
+    </div>
+  
+    <div v-else class="result-container">
+      <h2>Quiz Finished!</h2>
+      <p>Total Wrong Answers: {{ wrongAnswers.length }}</p>
     </div>
   </template>
   
   <script>
   export default {
-    methods: {
-      answer(isCorrect) {
-        if (isCorrect) {
-          alert("Correct!");
-        } else {
-          alert("Incorrect!");
-        }
-      },
+    data() {
+      return {
+        words: JSON.parse(localStorage.getItem("words")) || [],
+        currentIndex: 0,
+        userAnswer: "",
+        score: 30,
+        wrongAnswers: [],
+        correctAnswers: []
+      };
     },
+    methods: {
+      checkAnswer() {
+        let currentWord = this.words[this.currentIndex];
+        if (this.userAnswer.trim().toLowerCase() === currentWord.english.toLowerCase()) {
+          this.score += 10;
+          this.correctAnswers.push(currentWord);
+        } else {
+          this.wrongAnswers.push(currentWord);
+        }
+        this.userAnswer = "";
+        this.currentIndex++;
+  
+        if (this.currentIndex >= this.words.length) {
+          localStorage.setItem("wrongAnswers", JSON.stringify(this.wrongAnswers));
+          localStorage.setItem("correctAnswers", JSON.stringify(this.correctAnswers));
+          setTimeout(() => {
+            this.$router.push("/"); 
+          }, 2000);
+        }
+      }
+    }
   };
   </script>
   
+  
   <style scoped>
   .quiz-container {
-    margin-right: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,45 +147,38 @@
     font-weight: bold;
   }
   
-  .word-sub {
-    font-size: 20px;
-    color: #2a7ab0;
-    font-weight: bold;
+  .answer-input {
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 180px;
+    text-align: center;
   }
   
   .button-group {
     margin-top: 10px;
-    display: flex;
-    gap: 10px;
   }
   
-  .correct-btn,
-  .wrong-btn {
+  .correct-btn {
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
+    background-color: #4caf50;
+    color: white;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
-  
-  .correct-btn {
-    background-color: #4caf50;
-    color: white;
   }
   
   .correct-btn:hover {
     background-color: #388e3c;
   }
   
-  .wrong-btn {
-    background-color: #e57373;
-    color: white;
-  }
-  
-  .wrong-btn:hover {
-    background-color: #d32f2f;
+  .result-container {
+    text-align: center;
+    padding: 20px;
   }
   </style>
   

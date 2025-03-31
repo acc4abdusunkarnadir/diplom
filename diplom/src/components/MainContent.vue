@@ -1,168 +1,159 @@
 <template>
-    <div class="main-content">
-      <div class="progress-section">
-        <div class="progress-card">
-          <div class="progress-img"></div>
-          <h2 class="progress-title">тарихын</h2>
-          <p class="progress-subtitle">жақсы жұмыс істедің</p>
-          <div class="progress-info">
-            <div class="points">
-              <span class="big">240</span>
-              <p>ұпай</p>
-            </div>
-            <div class="words">
-              <span class="big">40/30</span>
-              <p>сөз</p>
-            </div>
+  <div class="main-content">
+    <div class="progress-section">
+      <div class="progress-card">
+        <h2 class="progress-title">Quiz Summary</h2>
+        <p class="progress-subtitle">Good job!</p>
+        <div class="progress-info">
+          <div class="points">
+            <span class="big">{{ score }}</span>
+            <p>ұпай</p>
           </div>
-          <button class="retry">қайтадан ойнау</button>
-          <button class="notebook">дәптеріме бару</button>
+          <div class="words">
+            <span class="big">{{ correctAnswers.length }}/{{ totalWords }}</span>
+            <p>Correct Words</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="words-section">
-        <div class="words-card">
-          <h3 class="word-title">сөздікқор <span class="badge blue">15 words</span></h3>
-          <ul class="word-list">
-            <li>Жалғыздық</li>
-            <li>танымалы <span class="icon">🎵</span></li>
-            <li>ауыл</li>
-            <li>маңызды</li>
-            <li>маңызды</li>
-          </ul>
-        </div>
-       
-        <div class="words-card">
-          <h3 class="word-title">білмейтін сөздер <span class="badge red">15 words</span></h3>
-          <ul class="word-list">
-            <li>Жалғыздық</li>
-            <li>танымалы <span class="icon">🎵</span></li>
-            <li>ауыл</li>
-            <li>маңызды</li>
-            <li>маңызды</li>
-          </ul>
-        </div>
+        <button @click="retryQuiz" class="retry">Retry</button>
       </div>
     </div>
-  </template>
-  
-  <style scoped>
-  /* Centering the entire content */
-  .main-content {
-  width: 100%;  /* Ensures it takes full width */
+
+    <div class="words-section">
+      <div class="words-card">
+        <h3 class="word-title">Incorrect Answers <span class="badge red">{{ wrongAnswers.length }}</span></h3>
+        <table class="word-table">
+          <thead>
+            <tr>
+              <th>Kazakh</th>
+              <th>Your Answer</th>
+              <th>Correct Answer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(word, index) in wrongAnswers" :key="index">
+              <td>{{ word.kazakh }}</td>
+              <td class="wrong">{{ word.userAnswer }}</td>
+              <td class="correct">{{ word.english }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      wrongAnswers: JSON.parse(localStorage.getItem("wrongAnswers")) || [],
+      correctAnswers: JSON.parse(localStorage.getItem("correctAnswers")) || [],
+      totalWords: JSON.parse(localStorage.getItem("words"))?.length || 0,
+      score: 30 + (JSON.parse(localStorage.getItem("correctAnswers"))?.length || 0) * 10
+    };
+  },
+  methods: {
+    retryQuiz() {
+      this.$router.push("/quiz"); // Restart quiz
+    }
+  }
+};
+</script>
+
+<style scoped>
+.main-content {
   display: flex;
   flex-direction: row;
- /* Spreads content evenly */
   align-items: center;
-  height: 100%;
-  min-height: 80vh;
   gap: 2rem;
-  padding: 10px 5rem; /* Add some padding for spacing */
-  margin-left: 300px; /* Remove margin-right */
+  padding: 20px;
 }
 
-.progress-card, 
+.progress-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+}
+
+.big {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.retry {
+  background: #f4f4f4;
+}
+
+.words-section {
+  flex-grow: 1;
+}
+
 .words-card {
-  width: 100%;  /* Makes them take full width */
-  max-width: 500px; /* Adjust as needed */
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-  
-  /* Card styles */
-  .progress-card, 
-  .words-card {
- 
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-  }
-  .words-card {
- 
-display: flex;
-flex-direction: column;
-gap: 20px;
+.word-title {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 }
-  /* Title styles */
-  .progress-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Progress info */
-  .progress-info {
-    display: flex;
-    justify-content: space-around;
-    margin: 1rem 0;
-  }
-  
-  /* Large numbers */
-  .big {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  /* Button styles */
-  button {
-    margin-top: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .retry {
-    background: #f4f4f4;
-  }
-  
-  .notebook {
-    background: #007acc;
-    color: white;
-  }
-  
-  /* Word section styles */
-  .word-title {
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .badge {
-    padding: 0.2rem 0.5rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-  }
-  
-  .blue {
-    background: #dceefb;
-    color: #007acc;
-  }
-  
-  .red {
-    background: #fbd4d4;
-    color: #d9534f;
-  }
-  
-  /* Word list */
-  .word-list {
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .icon {
-    margin-left: 5px;
-  }
-  .words-section{
-    display: flex;
-    flex-direction: column;
-    gap:20px;
-  }
-  </style>
-  
+
+.badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.red {
+  background: #fbd4d4;
+  color: #d9534f;
+}
+
+.word-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.word-table th, .word-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.word-table th {
+  background: #f4f4f4;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+</style>
