@@ -2,9 +2,9 @@
 import { ref } from "vue";
 
 const links = ref([
-  { name: "басты бет", path: "/" },
-  { name: "сабактар", path: "/courses" },
-  { name: "Біз туралы", path: "/about" },
+  { name: "Нәтиже", path: "/" },
+  { name: "Квиз", path: "/courses" },
+  { name: "сөздік қорлар", path: "/about" },
   { name: "хабарласу", path: "/contact" },
 ]);
 </script>

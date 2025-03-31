@@ -34,7 +34,7 @@
         words: JSON.parse(localStorage.getItem("words")) || [],
         currentIndex: 0,
         userAnswer: "",
-        score: 30,
+        score: 0,
         wrongAnswers: [],
         correctAnswers: []
       };

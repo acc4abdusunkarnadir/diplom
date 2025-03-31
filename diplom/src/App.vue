@@ -17,7 +17,7 @@ import WebFooter from "./components/WebFooter.vue";
 /* does not talk with screen, only with parent */
 .app-container {
   width: 100%;
-  max-width: 100%; /* Ensures it doesn’t shrink */
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
