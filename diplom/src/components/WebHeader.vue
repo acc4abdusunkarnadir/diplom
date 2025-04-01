@@ -1,5 +1,27 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const isAuthenticated = ref(false);
+const username = ref("");
+
+const checkAuth = () => {
+  isAuthenticated.value = localStorage.getItem("isAuthenticated") === "true";
+  username.value = localStorage.getItem("username") || "";
+};
+
+watchEffect(() => {
+  checkAuth();
+});
+
+const logout = () => {
+  localStorage.removeItem("isAuthenticated");
+  localStorage.removeItem("username");
+  isAuthenticated.value = false;
+  username.value = "";
+  router.push("/signin");
+};
 
 const links = ref([
   { name: "Нәтиже", path: "/" },
@@ -20,9 +42,16 @@ const links = ref([
       </ul>
     </nav>
     <div class="header-right-part">
-      <img class="profile-pic" src="https://via.placeholder.com/50" alt="Profile" />
-      <button class="btn login">тіркелу</button>
-      <button class="btn signup">кіру</button>
+      <template v-if="isAuthenticated">
+        <div class="user-info">
+          <span class="username">👤 {{ username }}</span>
+          <button class="btn logout" @click="logout">Шығу</button>
+        </div>
+      </template>
+      <template v-else>
+        <button class="btn login" @click="router.push('/signin')">Тіркелу</button>
+        <button class="btn signup" @click="router.push('/signup')">Кіру</button>
+      </template>
     </div>
   </header>
 </template>
@@ -72,18 +101,20 @@ const links = ref([
 .header-right-part {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 13%;
-  height: 100%;
+  gap: 10px;
 }
 
-/* Profile Picture */
-.profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
+/* Profile & Logout */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
 }
 
 /* Buttons */
@@ -102,11 +133,18 @@ const links = ref([
 }
 
 .signup {
-  margin-left: 10px;
   background: #28a745;
 }
 
 .signup:hover {
   background: #218838;
+}
+
+.logout {
+  background: #e57373;
+}
+
+.logout:hover {
+  background: #d32f2f;
 }
 </style>

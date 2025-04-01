@@ -6,6 +6,7 @@
           <input type="text" v-model="user.username" placeholder="Username" required />
           <input type="password" v-model="user.password" placeholder="Password" required />
           <button type="submit">Sign In</button>
+          <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
         </form>
         <p>Don't have an account? <router-link to="/signup">Sign Up</router-link></p>
       </div>
@@ -13,22 +14,28 @@
   </template>
   
   <script>
+  import { ref } from "vue";
+  import { useRouter } from "vue-router";
+  
   export default {
-    data() {
-      return {
-        user: { username: "", password: "" },
-      };
-    },
-    methods: {
-      signIn() {
+    setup() {
+      const router = useRouter();
+      const user = ref({ username: "", password: "" });
+      const errorMessage = ref("");
+  
+      const signIn = () => {
         const storedUser = JSON.parse(localStorage.getItem("user"));
-        if (storedUser && storedUser.username === this.user.username && storedUser.password === this.user.password) {
+        if (storedUser && storedUser.username === user.value.username && storedUser.password === user.value.password) {
           localStorage.setItem("isAuthenticated", "true");
-          this.$router.push("/courses");
+          localStorage.setItem("username", storedUser.username);
+          window.dispatchEvent(new Event("storage")); // Triggers an update in WebHeader.vue
+          router.push("/courses");
         } else {
-          alert("Invalid credentials!");
+          errorMessage.value = "Invalid credentials!";
         }
-      },
+      };
+  
+      return { user, errorMessage, signIn };
     },
   };
   </script>
@@ -80,6 +87,12 @@
   
   p {
     margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
   }
   </style>
   
