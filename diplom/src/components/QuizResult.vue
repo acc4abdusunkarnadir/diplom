@@ -49,7 +49,7 @@ export default {
       wrongAnswers: JSON.parse(localStorage.getItem("wrongAnswers")) || [],
       correctAnswers: JSON.parse(localStorage.getItem("correctAnswers")) || [],
       totalWords: JSON.parse(localStorage.getItem("words"))?.length || 0,
-      score: 30 + (JSON.parse(localStorage.getItem("correctAnswers"))?.length || 0) * 10
+      score: 0 + (JSON.parse(localStorage.getItem("correctAnswers"))?.length || 0) * 10
     };
   },
   methods: {

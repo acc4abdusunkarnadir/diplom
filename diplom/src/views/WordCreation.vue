@@ -8,7 +8,8 @@
       <button @click="addWord">Add Word</button>
     </div>
 
-    <div class="word-list">
+   
+    <div class="word-list" v-if="words.length">
       <div class="word-item" v-for="(word, index) in words" :key="index">
         <div class="kazakh">{{ word.kazakh }}</div>
         <div class="english">{{ word.english }}</div>
@@ -23,22 +24,41 @@ export default {
     return {
       kazakhWord: "",
       englishWord: "",
-      words: JSON.parse(localStorage.getItem("words")) || []
+      words: [], 
     };
   },
   methods: {
-    addWord() {
+    async addWord() {
       if (this.kazakhWord && this.englishWord) {
-        this.words.push({ kazakh: this.kazakhWord, english: this.englishWord });
-        localStorage.setItem("words", JSON.stringify(this.words)); // Store in local storage
-        this.kazakhWord = "";
-        this.englishWord = "";
+        try {
+          const response = await fetch("http://localhost:3000/api/words", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              kazakh: this.kazakhWord,
+              english: this.englishWord,
+            }),
+          });
+
+          if (response.ok) {
+            const savedWord = await response.json();
+            this.words.push(savedWord); 
+            this.kazakhWord = "";
+            this.englishWord = "";
+            alert("Word saved to database!");
+          } else {
+            console.error("Failed to save word");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
       }
-    }
-  }
+    },
+  },
 };
 </script>
-
 <style scoped>
 .word-creation {
   display: flex;
