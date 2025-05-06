@@ -28,6 +28,7 @@ const links = ref([
   { name: "Квиз", path: "/courses" },
   { name: "сөздік қорлар", path: "/about" },
   { name: "хабарласу", path: "/contact" },
+  { name: "Listening", path: "/listening" },
 ]);
 </script>
 

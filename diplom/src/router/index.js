@@ -4,6 +4,7 @@ import QuizPage from '@/components/QuizPage.vue';
 import MainContent from '@/components/QuizResult.vue';
 import SignIn from '@/components/SignIn.vue';
 import SignUp from '@/components/SignUp.vue';
+import Listening from '../components/Listening.vue';
 
 
 const router = createRouter({
@@ -13,6 +14,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: MainContent,
+    },
+    {
+      path: '/listening',
+      name: 'Listening',
+      component: Listening,
     },
 
     {
