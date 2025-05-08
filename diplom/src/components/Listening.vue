@@ -4,7 +4,11 @@
     <div v-if="currentQuestion" class="question-section">
       <audio :src="currentQuestion.audio" controls></audio>
       <div class="options">
-        <label v-for="(option, index) in currentQuestion.options" :key="index" class="option-label">
+        <label
+          v-for="(option, index) in currentQuestion.options"
+          :key="index"
+          class="option-label"
+        >
           <input type="radio" :value="option" v-model="userAnswer" />
           {{ option }}
         </label>
@@ -23,9 +27,9 @@ export default {
     return {
       questions: [
         {
-          audio: 'path/to/audio1.mp3',
-          options: ['Option 1', 'Option 2', 'Option 3'],
-          correctAnswer: 'Option 1',
+          audio: "path/to/audio1.mp3",
+          options: ["Option 1", "Option 2", "Option 3"],
+          correctAnswer: "Option 1",
         },
         // Add more questions as needed
       ],
@@ -79,7 +83,7 @@ export default {
 .submit-button {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;

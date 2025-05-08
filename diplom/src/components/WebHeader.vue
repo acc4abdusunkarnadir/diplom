@@ -1,3 +1,30 @@
+<template>
+  <header class="header">
+    <div class="logo">🌐 KazakhWeb</div>
+    <nav class="nav">
+      <ul>
+        <li v-for="link in links" :key="link.path">
+          <router-link :to="link.path">{{ link.name }}</router-link>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-right-part">
+      <template v-if="isAuthenticated">
+        <div class="user-info">
+          <span class="username">👤 {{ username }}</span>
+          <button class="btn logout" @click="logout">Шығу</button>
+        </div>
+      </template>
+      <template v-else>
+        <button class="btn login" @click="router.push('/signin')">
+          Тіркелу
+        </button>
+        <button class="btn signup" @click="router.push('/signup')">Кіру</button>
+      </template>
+    </div>
+  </header>
+</template>
+
 <script setup>
 import { ref, watchEffect } from "vue";
 import { useRouter } from "vue-router";
@@ -31,31 +58,6 @@ const links = ref([
   { name: "Listening", path: "/listening" },
 ]);
 </script>
-
-<template>
-  <header class="header">
-    <div class="logo">🌐 KazakhWeb</div>
-    <nav class="nav">
-      <ul>
-        <li v-for="link in links" :key="link.path">
-          <router-link :to="link.path">{{ link.name }}</router-link>
-        </li>
-      </ul>
-    </nav>
-    <div class="header-right-part">
-      <template v-if="isAuthenticated">
-        <div class="user-info">
-          <span class="username">👤 {{ username }}</span>
-          <button class="btn logout" @click="logout">Шығу</button>
-        </div>
-      </template>
-      <template v-else>
-        <button class="btn login" @click="router.push('/signin')">Тіркелу</button>
-        <button class="btn signup" @click="router.push('/signup')">Кіру</button>
-      </template>
-    </div>
-  </header>
-</template>
 
 <style scoped>
 /* Header Styling */

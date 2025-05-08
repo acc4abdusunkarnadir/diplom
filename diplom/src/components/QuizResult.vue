@@ -10,9 +10,7 @@
             <p>ұпай</p>
           </div>
           <div class="words">
-            <span class="big"
-              >{{ correctAnswers.length }}/{{ totalWords }}</span
-            >
+            <span class="big">{{ correctAnswers.length }}/{{ totalWords }}</span>
             <p>Correct Words</p>
           </div>
         </div>
@@ -22,10 +20,7 @@
 
     <div class="words-section">
       <div class="words-card">
-        <h3 class="word-title">
-          Incorrect Answers
-          <span class="badge red">{{ wrongAnswers.length }}</span>
-        </h3>
+        <h3 class="word-title">Incorrect Answers <span class="badge red">{{ wrongAnswers.length }}</span></h3>
         <table class="word-table">
           <thead>
             <tr>
@@ -53,28 +48,15 @@ export default {
     return {
       wrongAnswers: JSON.parse(localStorage.getItem("wrongAnswers")) || [],
       correctAnswers: JSON.parse(localStorage.getItem("correctAnswers")) || [],
-      totalWords: 0, // Initialize totalWords to 0
-      score:
-        0 +
-        (JSON.parse(localStorage.getItem("correctAnswers"))?.length || 0) * 10,
+      totalWords: JSON.parse(localStorage.getItem("words"))?.length || 0,
+      score: 0 + (JSON.parse(localStorage.getItem("correctAnswers"))?.length || 0) * 10
     };
   },
-  created() {
-    this.fetchTotalWords();
-  },
   methods: {
-    fetchTotalWords() {
-      fetch("http://localhost:3000/api/words")
-        .then((response) => response.json())
-        .then((data) => {
-          this.totalWords = data.length; // Set totalWords based on fetched data
-        })
-        .catch((error) => console.error("Error fetching words:", error));
-    },
     retryQuiz() {
       this.$router.push("/quiz"); // Restart quiz
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -155,8 +137,7 @@ button {
   margin-top: 10px;
 }
 
-.word-table th,
-.word-table td {
+.word-table th, .word-table td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
