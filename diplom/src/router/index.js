@@ -6,6 +6,7 @@ import SignIn from '@/components/SignIn.vue';
 import SignUp from '@/components/SignUp.vue';
 import Listening from '../components/Listening.vue';
 import WordGame from '@/components/WordGame.vue'; // Import the WordGame component
+import KazakhAdventure from '@/components/KazakhAdventure.vue'; // Add this import
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,13 +31,6 @@ const router = createRouter({
       path: '/courses',
       name: 'courses',
       component: QuizPage,
-      beforeEnter: (to, from, next) => {
-        if (localStorage.getItem('isAuthenticated') === 'true') {
-          next();
-        } else {
-          next('/signin');
-        }
-      },
     },
     {
       path: '/signin',
@@ -52,6 +46,11 @@ const router = createRouter({
       path: '/wordgame',
       name: 'WordGame',
       component: WordGame,
+    },
+    {
+      path: '/adventure',
+      name: 'KazakhAdventure',
+      component: KazakhAdventure,
     },
   ],
 });

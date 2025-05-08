@@ -56,6 +56,7 @@ const links = ref([
   { name: "сөздік қорлар", path: "/about" },
   { name: "хабарласу", path: "/contact" },
   { name: "Listening", path: "/listening" },
+  { name: "Adventure", path: "/adventure" },
 ]);
 </script>
 
