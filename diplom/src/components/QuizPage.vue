@@ -10,16 +10,37 @@
           <p class="score-title">{{ score }}</p>
           <p class="score-subtitle">ұпай</p>
         </div>
-        <div class="word-content">
-          <h2 class="word-main">{{ words[currentIndex].kazakh }}</h2>
-          <input
-            v-model="userAnswer"
-            placeholder="Enter translation"
-            class="answer-input"
-          />
-        </div>
-        <div class="button-group">
-          <button @click="checkAnswer" class="correct-btn">Submit</button>
+
+        <div
+          class="flip-card"
+          :class="{ 'is-flipped': isFlipped }"
+          @click="toggleFlip"
+        >
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h2 class="word-main">{{ words[currentIndex].kazakh }}</h2>
+              <div class="answer-input-container">
+                <input
+                  v-model="userAnswer"
+                  placeholder="Enter translation"
+                  class="answer-input"
+                  @keyup.enter="handleEnter"
+                />
+              </div>
+              <div class="button-group">
+                <button @click="toggleFlip" class="correct-btn">
+                  Check Answer
+                </button>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h2 class="word-main">{{ words[currentIndex].kazakh }}</h2>
+              <h3 class="translation">{{ words[currentIndex].english }}</h3>
+              <div class="button-group">
+                <button @click="checkAnswer" class="correct-btn">Next</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -28,6 +49,23 @@
   <div v-else class="result-container">
     <h2>Quiz Finished!</h2>
     <p>Total Wrong Answers: {{ wrongAnswers.length }}</p>
+    <div class="review-section" v-if="wrongAnswers.length > 0">
+      <h3>Review Wrong Answers:</h3>
+      <div class="review-cards">
+        <div
+          v-for="(word, index) in wrongAnswers"
+          :key="index"
+          class="review-card"
+        >
+          <div class="review-card-front">
+            <h4>{{ word.kazakh }}</h4>
+          </div>
+          <div class="review-card-back">
+            <h4>{{ word.english }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,18 +73,27 @@
 export default {
   data() {
     return {
-      words: [], // Initialize as an empty array
+      words: [],
       currentIndex: 0,
       userAnswer: "",
       score: 0,
       wrongAnswers: [],
       correctAnswers: [],
+      isFlipped: false,
     };
   },
   created() {
     this.fetchWords();
   },
   methods: {
+    handleEnter() {
+      if (this.userAnswer.trim()) {
+        this.toggleFlip();
+      }
+    },
+    toggleFlip() {
+      this.isFlipped = !this.isFlipped;
+    },
     async fetchWords() {
       try {
         const response = await fetch("http://localhost:3000/api/words");
@@ -72,6 +119,7 @@ export default {
       }
       this.userAnswer = "";
       this.currentIndex++;
+      this.isFlipped = false;
 
       if (this.currentIndex >= this.words.length) {
         localStorage.setItem("wrongAnswers", JSON.stringify(this.wrongAnswers));
@@ -137,19 +185,11 @@ export default {
   justify-content: center;
 }
 
-.top-left,
 .top-right {
   position: absolute;
   top: 10%;
-  text-align: center;
-}
-
-.top-left {
-  left: 15%;
-}
-
-.top-right {
   right: 15%;
+  text-align: center;
 }
 
 .score-title {
@@ -162,22 +202,76 @@ export default {
   color: gray;
 }
 
-.word-content {
+/* Flip Card Styles */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
   text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.flip-card-back {
+  background-color: #f8f9fa;
+  color: #333;
+  transform: rotateY(180deg);
 }
 
 .word-main {
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hint-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.answer-input-container {
+  margin: 20px 0;
 }
 
 .answer-input {
-  margin-top: 10px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 180px;
+  width: 200px;
   text-align: center;
+  font-size: 16px;
 }
 
 .button-group {
@@ -200,8 +294,65 @@ export default {
   background-color: #388e3c;
 }
 
+/* Result Container Styles */
 .result-container {
   text-align: center;
   padding: 20px;
+}
+
+.review-section {
+  margin-top: 30px;
+}
+
+.review-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.review-card {
+  width: 150px;
+  height: 100px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.review-card-front,
+.review-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s;
+}
+
+.review-card-front {
+  background-color: #ffffff;
+}
+
+.review-card-back {
+  background-color: #f8f9fa;
+  transform: rotateY(180deg);
+}
+
+.review-card:hover .review-card-front {
+  transform: rotateY(180deg);
+}
+
+.review-card:hover .review-card-back {
+  transform: rotateY(0);
+}
+
+.translation {
+  font-size: 20px;
+  color: #2a7ab0;
+  margin: 10px 0;
 }
 </style>
