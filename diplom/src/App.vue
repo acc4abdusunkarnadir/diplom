@@ -14,22 +14,31 @@ import Listening from "./components/Listening.vue"; // Import the Listening comp
   </div>
 </template>
 
-<style scoped>
-/* does not talk with screen, only with parent */
+<style>
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+/* App container styles */
 .app-container {
-  width: 100%;
-  max-width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .content {
+  flex: 1 0 auto;
   width: 100%;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding-top: 70px; /* Height of the header */
+  padding-bottom: 2rem; /* Space before footer */
 }
 </style>

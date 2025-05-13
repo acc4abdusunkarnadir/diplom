@@ -18,32 +18,34 @@
       </button>
     </div>
 
-    <div class="word-cards">
-      <div
-        v-for="(word, index) in currentWords"
-        :key="word.id"
-        class="word-card"
-        :class="{ learned: learnedWords.has(word.id) }"
-      >
+    <div class="word-cards-container">
+      <div class="word-cards">
         <div
-          class="card-inner"
-          :class="{ 'is-flipped': isFlipped === index }"
-          @click="toggleFlip(index)"
-        >
-          <div class="card-front">
-            <h3>{{ word.kazakh }}</h3>
-          </div>
-          <div class="card-back">
-            <h3>{{ word.english }}</h3>
-          </div>
-        </div>
-        <button
-          class="mark-learned-btn"
-          @click.stop="toggleLearned(word.id)"
+          v-for="(word, index) in currentWords"
+          :key="word.id"
+          class="word-card"
           :class="{ learned: learnedWords.has(word.id) }"
         >
-          {{ learnedWords.has(word.id) ? "Learned" : "Mark as Learned" }}
-        </button>
+          <div
+            class="card-inner"
+            :class="{ 'is-flipped': isFlipped === index }"
+            @click="toggleFlip(index)"
+          >
+            <div class="card-front">
+              <h3>{{ word.kazakh }}</h3>
+            </div>
+            <div class="card-back">
+              <h3>{{ word.english }}</h3>
+            </div>
+          </div>
+          <button
+            class="mark-learned-btn"
+            @click.stop="toggleLearned(word.id)"
+            :class="{ learned: learnedWords.has(word.id) }"
+          >
+            {{ learnedWords.has(word.id) ? "Learned" : "Mark as Learned" }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -146,23 +148,43 @@ export default {
         this.currentPage = parseInt(savedPage);
       }
     },
+    loadWords() {
+      // Get learned words from localStorage
+      const learned = new Set(
+        JSON.parse(localStorage.getItem("learnedWords") || "[]")
+      );
+      // Add IDs to dataset words
+      const allWords = dataset.map((word, index) => ({
+        ...word,
+        id: index.toString(),
+      }));
+      // Only use words NOT learned
+      this.words = allWords.filter((word) => !learned.has(word.id));
+    },
   },
   mounted() {
     this.fetchWords();
     this.loadProgress();
+    this.loadWords();
   },
 };
 </script>
 
 <style scoped>
 .learning-system {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100%;
 }
 
 .progress-container {
   margin-bottom: 2rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .progress-bar {
@@ -203,6 +225,15 @@ export default {
 
 .control-btn:hover {
   background-color: #1976d2;
+}
+
+.word-cards-container {
+  overflow-y: auto;
+  max-height: calc(
+    100vh - 400px
+  ); /* Adjusted for header, footer, and other elements */
+  padding: 1rem;
+  margin: -1rem;
 }
 
 .word-cards {
@@ -287,6 +318,13 @@ export default {
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }
 
 .pagination-btn {
@@ -306,5 +344,40 @@ export default {
 .page-info {
   font-size: 1.1rem;
   color: #666;
+}
+
+/* Add smooth scrolling */
+.word-cards-container {
+  scroll-behavior: smooth;
+}
+
+/* Add custom scrollbar */
+.word-cards-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.word-cards-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.word-cards-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.word-cards-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 70px;
+  background: #e5e6e7;
+  z-index: 1000;
+  /* ...other styles... */
 }
 </style>

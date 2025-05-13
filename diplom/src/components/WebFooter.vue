@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 const footerLinks = ref([
-{ name: "басты бет", path: "/" },
+  { name: "басты бет", path: "/" },
   { name: "сабактар", path: "/courses" },
   { name: "Біз туралы", path: "/about" },
   { name: "хабарласу", path: "/contact" },
@@ -38,22 +38,18 @@ const socialLinks = ref([
         </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2024 KazakhWeb. All rights reserved.
-    </div>
+    <div class="footer-bottom">© 2024 KazakhWeb. All rights reserved.</div>
   </footer>
 </template>
+
 <style scoped>
 .footer {
-    border:black;
-  width: 100%; /* Ensure it spans the full width */
+  width: 100%;
   background: #e5e6e7;
   color: black;
-  padding: 2rem;
+  padding: 1rem 2rem;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  margin-top: auto;
 }
 
 .footer-content {
@@ -61,9 +57,10 @@ const socialLinks = ref([
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure full width */
-  max-width: 100%; /* Remove max-width limitation */
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem 0;
 }
 
 .footer-logo {
@@ -104,7 +101,19 @@ const socialLinks = ref([
   font-size: 0.9rem;
   opacity: 0.8;
   width: 100%;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 </style>
-
-
