@@ -1,19 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import QuizPage from '@/components/QuizPage.vue';
-import MainContent from '@/components/QuizResult.vue';
 import SignIn from '@/components/SignIn.vue';
 import SignUp from '@/components/SignUp.vue';
 import Listening from '../components/Listening.vue';
-import WordGame from '@/components/WordGame.vue'; // Import the WordGame component
-import KazakhAdventure from '@/components/KazakhAdventure.vue'; // Add this import
+import WordGame from '@/components/WordGame.vue';
+import KazakhAdventure from '@/components/KazakhAdventure.vue';
+import LearningSystem from '../components/LearningSystem.vue';
+import MainContent from '@/components/QuizResult.vue';
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: MainContent,
     },
     {
@@ -21,7 +23,6 @@ const router = createRouter({
       name: 'Listening',
       component: Listening,
     },
-
     {
       path: '/about',
       name: 'about',
@@ -51,6 +52,12 @@ const router = createRouter({
       path: '/adventure',
       name: 'KazakhAdventure',
       component: KazakhAdventure,
+    },
+
+    {
+      path: '/learning',
+      name: 'Learning',
+      component: LearningSystem,
     },
   ],
 });

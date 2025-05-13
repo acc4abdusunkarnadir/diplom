@@ -1,0 +1,3206 @@
+[
+  {
+    "english": "a",
+    "kazakh": "артикль"
+  },
+  {
+    "english": "ability",
+    "kazakh": "қабілеті"
+  },
+  {
+    "english": "able",
+    "kazakh": "қабілетті"
+  },
+  {
+    "english": "about",
+    "kazakh": "туралы"
+  },
+  {
+    "english": "above",
+    "kazakh": "жоғарыда"
+  },
+  {
+    "english": "accept",
+    "kazakh": "қабылдау"
+  },
+  {
+    "english": "according",
+    "kazakh": "сәйкес"
+  },
+  {
+    "english": "account",
+    "kazakh": "есептік жазба"
+  },
+  {
+    "english": "across",
+    "kazakh": "бойымен"
+  },
+  {
+    "english": "act",
+    "kazakh": "әрекет"
+  },
+  {
+    "english": "action",
+    "kazakh": "әрекет"
+  },
+  {
+    "english": "activity",
+    "kazakh": "белсенділік"
+  },
+  {
+    "english": "actually",
+    "kazakh": "шын мәнінде"
+  },
+  {
+    "english": "add",
+    "kazakh": "қосу"
+  },
+  {
+    "english": "address",
+    "kazakh": "мекенжайы"
+  },
+  {
+    "english": "administration",
+    "kazakh": "әкімшілік"
+  },
+  {
+    "english": "admit",
+    "kazakh": "мойындау"
+  },
+  {
+    "english": "adult",
+    "kazakh": "ересек"
+  },
+  {
+    "english": "affect",
+    "kazakh": "әсер ету"
+  },
+  {
+    "english": "after",
+    "kazakh": "кейін"
+  },
+  {
+    "english": "again",
+    "kazakh": "қайтадан"
+  },
+  {
+    "english": "against",
+    "kazakh": "қарсы"
+  },
+  {
+    "english": "age",
+    "kazakh": "жасы"
+  },
+  {
+    "english": "agency",
+    "kazakh": "агенттік"
+  },
+  {
+    "english": "agent",
+    "kazakh": "агент"
+  },
+  {
+    "english": "ago",
+    "kazakh": "бұрын"
+  },
+  {
+    "english": "agree",
+    "kazakh": "келісемін"
+  },
+  {
+    "english": "agreement",
+    "kazakh": "келісім"
+  },
+  {
+    "english": "ahead",
+    "kazakh": "алда"
+  },
+  {
+    "english": "air",
+    "kazakh": "ауа"
+  },
+  {
+    "english": "all",
+    "kazakh": "барлығы"
+  },
+  {
+    "english": "allow",
+    "kazakh": "рұқсат ету"
+  },
+  {
+    "english": "almost",
+    "kazakh": "дерлік"
+  },
+  {
+    "english": "alone",
+    "kazakh": "жалғыз"
+  },
+  {
+    "english": "along",
+    "kazakh": "бойымен"
+  },
+  {
+    "english": "already",
+    "kazakh": "қазірдің өзінде"
+  },
+  {
+    "english": "also",
+    "kazakh": "сондай-ақ"
+  },
+  {
+    "english": "although",
+    "kazakh": "дегенмен"
+  },
+  {
+    "english": "always",
+    "kazakh": "әрқашан"
+  },
+  {
+    "english": "American",
+    "kazakh": "американдық"
+  },
+  {
+    "english": "among",
+    "kazakh": "арасында"
+  },
+  {
+    "english": "amount",
+    "kazakh": "сомасы"
+  },
+  {
+    "english": "analysis",
+    "kazakh": "талдау"
+  },
+  {
+    "english": "and",
+    "kazakh": "және"
+  },
+  {
+    "english": "animal",
+    "kazakh": "жануар"
+  },
+  {
+    "english": "another",
+    "kazakh": "басқа"
+  },
+  {
+    "english": "answer",
+    "kazakh": "жауап"
+  },
+  {
+    "english": "any",
+    "kazakh": "кез келген"
+  },
+  {
+    "english": "anyone",
+    "kazakh": "кез келген"
+  },
+  {
+    "english": "anything",
+    "kazakh": "кез келген нәрсе"
+  },
+  {
+    "english": "appear",
+    "kazakh": "пайда болады"
+  },
+  {
+    "english": "apply",
+    "kazakh": "қолдану"
+  },
+  {
+    "english": "approach",
+    "kazakh": "көзқарас"
+  },
+  {
+    "english": "area",
+    "kazakh": "аумақ"
+  },
+  {
+    "english": "argue",
+    "kazakh": "дауласу"
+  },
+  {
+    "english": "arm",
+    "kazakh": "қол"
+  },
+  {
+    "english": "around",
+    "kazakh": "айнала"
+  },
+  {
+    "english": "arrive",
+    "kazakh": "келу"
+  },
+  {
+    "english": "art",
+    "kazakh": "өнер"
+  },
+  {
+    "english": "article",
+    "kazakh": "мақала"
+  },
+  {
+    "english": "artist",
+    "kazakh": "суретші"
+  },
+  {
+    "english": "as",
+    "kazakh": "ретінде"
+  },
+  {
+    "english": "ask",
+    "kazakh": "сұраңыз"
+  },
+  {
+    "english": "assume",
+    "kazakh": "болжам"
+  },
+  {
+    "english": "at",
+    "kazakh": "жанында, -де, -да, -те, -та"
+  },
+  {
+    "english": "attack",
+    "kazakh": "шабуыл"
+  },
+  {
+    "english": "attention",
+    "kazakh": "назар аудару"
+  },
+  {
+    "english": "attorney",
+    "kazakh": "адвокат"
+  },
+  {
+    "english": "audience",
+    "kazakh": "аудитория"
+  },
+  {
+    "english": "author",
+    "kazakh": "автор"
+  },
+  {
+    "english": "authority",
+    "kazakh": "билік"
+  },
+  {
+    "english": "available",
+    "kazakh": "қолжетімді"
+  },
+  {
+    "english": "avoid",
+    "kazakh": "болдырмау"
+  },
+  {
+    "english": "away",
+    "kazakh": "алыс"
+  },
+  {
+    "english": "baby",
+    "kazakh": "нәресте"
+  },
+  {
+    "english": "back",
+    "kazakh": "артқа"
+  },
+  {
+    "english": "bad",
+    "kazakh": "нашар"
+  },
+  {
+    "english": "bag",
+    "kazakh": "сөмке"
+  },
+  {
+    "english": "ball",
+    "kazakh": "доп"
+  },
+  {
+    "english": "bank",
+    "kazakh": "банк"
+  },
+  {
+    "english": "bar",
+    "kazakh": "бар"
+  },
+  {
+    "english": "base",
+    "kazakh": "негіз"
+  },
+  {
+    "english": "be",
+    "kazakh": "болу"
+  },
+  {
+    "english": "beat",
+    "kazakh": "ұру"
+  },
+  {
+    "english": "beautiful",
+    "kazakh": "әдемі"
+  },
+  {
+    "english": "because",
+    "kazakh": "өйткені"
+  },
+  {
+    "english": "become",
+    "kazakh": "болу"
+  },
+  {
+    "english": "bed",
+    "kazakh": "төсек"
+  },
+  {
+    "english": "before",
+    "kazakh": "бұрын"
+  },
+  {
+    "english": "begin",
+    "kazakh": "БАСТА"
+  },
+  {
+    "english": "behavior",
+    "kazakh": "мінез-құлық"
+  },
+  {
+    "english": "behind",
+    "kazakh": "артта"
+  },
+  {
+    "english": "believe",
+    "kazakh": "сену"
+  },
+  {
+    "english": "benefit",
+    "kazakh": "пайда"
+  },
+  {
+    "english": "best",
+    "kazakh": "ең жақсы"
+  },
+  {
+    "english": "better",
+    "kazakh": "жақсырақ"
+  },
+  {
+    "english": "between",
+    "kazakh": "арасында"
+  },
+  {
+    "english": "beyond",
+    "kazakh": "тыс"
+  },
+  {
+    "english": "big",
+    "kazakh": "үлкен"
+  },
+  {
+    "english": "bill",
+    "kazakh": "шот"
+  },
+  {
+    "english": "billion",
+    "kazakh": "млрд"
+  },
+  {
+    "english": "bit",
+    "kazakh": "бит"
+  },
+  {
+    "english": "black",
+    "kazakh": "қара"
+  },
+  {
+    "english": "blood",
+    "kazakh": "қан"
+  },
+  {
+    "english": "blue",
+    "kazakh": "көк"
+  },
+  {
+    "english": "board",
+    "kazakh": "тақта"
+  },
+  {
+    "english": "body",
+    "kazakh": "дене"
+  },
+  {
+    "english": "book",
+    "kazakh": "кітап"
+  },
+  {
+    "english": "born",
+    "kazakh": "туған"
+  },
+  {
+    "english": "both",
+    "kazakh": "екеуі де"
+  },
+  {
+    "english": "box",
+    "kazakh": "қорап"
+  },
+  {
+    "english": "boy",
+    "kazakh": "бала"
+  },
+  {
+    "english": "break",
+    "kazakh": "үзіліс"
+  },
+  {
+    "english": "bring",
+    "kazakh": "әкелу"
+  },
+  {
+    "english": "brother",
+    "kazakh": "аға"
+  },
+  {
+    "english": "budget",
+    "kazakh": "бюджет"
+  },
+  {
+    "english": "build",
+    "kazakh": "салу"
+  },
+  {
+    "english": "building",
+    "kazakh": "ғимарат"
+  },
+  {
+    "english": "business",
+    "kazakh": "бизнес"
+  },
+  {
+    "english": "but",
+    "kazakh": "бірақ"
+  },
+  {
+    "english": "buy",
+    "kazakh": "сатып алу"
+  },
+  {
+    "english": "by",
+    "kazakh": "бойынша"
+  },
+  {
+    "english": "call",
+    "kazakh": "қоңырау шалу"
+  },
+  {
+    "english": "camera",
+    "kazakh": "камера"
+  },
+  {
+    "english": "campaign",
+    "kazakh": "науқан"
+  },
+  {
+    "english": "can",
+    "kazakh": "алады"
+  },
+  {
+    "english": "cancer",
+    "kazakh": "қатерлі ісік"
+  },
+  {
+    "english": "candidate",
+    "kazakh": "кандидат"
+  },
+  {
+    "english": "capital",
+    "kazakh": "капитал"
+  },
+  {
+    "english": "car",
+    "kazakh": "машина"
+  },
+  {
+    "english": "card",
+    "kazakh": "карта"
+  },
+  {
+    "english": "care",
+    "kazakh": "қамқорлық"
+  },
+  {
+    "english": "career",
+    "kazakh": "мансап"
+  },
+  {
+    "english": "carry",
+    "kazakh": "тасымалдау"
+  },
+  {
+    "english": "case",
+    "kazakh": "іс"
+  },
+  {
+    "english": "catch",
+    "kazakh": "ұстау"
+  },
+  {
+    "english": "cause",
+    "kazakh": "себеп"
+  },
+  {
+    "english": "cell",
+    "kazakh": "ұяшық"
+  },
+  {
+    "english": "center",
+    "kazakh": "орталық"
+  },
+  {
+    "english": "central",
+    "kazakh": "орталық"
+  },
+  {
+    "english": "century",
+    "kazakh": "ғасыр"
+  },
+  {
+    "english": "certain",
+    "kazakh": "белгілі"
+  },
+  {
+    "english": "certainly",
+    "kazakh": "әрине"
+  },
+  {
+    "english": "chair",
+    "kazakh": "орындық"
+  },
+  {
+    "english": "challenge",
+    "kazakh": "шақыру"
+  },
+  {
+    "english": "chance",
+    "kazakh": "мүмкіндік"
+  },
+  {
+    "english": "change",
+    "kazakh": "өзгерту"
+  },
+  {
+    "english": "character",
+    "kazakh": "кейіпкер"
+  },
+  {
+    "english": "charge",
+    "kazakh": "заряд"
+  },
+  {
+    "english": "check",
+    "kazakh": "тексеру"
+  },
+  {
+    "english": "child",
+    "kazakh": "бала"
+  },
+  {
+    "english": "choice",
+    "kazakh": "таңдау"
+  },
+  {
+    "english": "choose",
+    "kazakh": "таңдау"
+  },
+  {
+    "english": "church",
+    "kazakh": "шіркеу"
+  },
+  {
+    "english": "citizen",
+    "kazakh": "азамат"
+  },
+  {
+    "english": "city",
+    "kazakh": "қала"
+  },
+  {
+    "english": "civil",
+    "kazakh": "азаматтық"
+  },
+  {
+    "english": "claim",
+    "kazakh": "Талап"
+  },
+  {
+    "english": "class",
+    "kazakh": "сынып"
+  },
+  {
+    "english": "clear",
+    "kazakh": "анық"
+  },
+  {
+    "english": "clearly",
+    "kazakh": "анық"
+  },
+  {
+    "english": "close",
+    "kazakh": "жабу"
+  },
+  {
+    "english": "coach",
+    "kazakh": "жаттықтырушы"
+  },
+  {
+    "english": "cold",
+    "kazakh": "суық"
+  },
+  {
+    "english": "collection",
+    "kazakh": "жинақ"
+  },
+  {
+    "english": "college",
+    "kazakh": "колледж"
+  },
+  {
+    "english": "color",
+    "kazakh": "түс"
+  },
+  {
+    "english": "come",
+    "kazakh": "кел"
+  },
+  {
+    "english": "commercial",
+    "kazakh": "коммерциялық"
+  },
+  {
+    "english": "common",
+    "kazakh": "ортақ"
+  },
+  {
+    "english": "community",
+    "kazakh": "қауымдастық"
+  },
+  {
+    "english": "company",
+    "kazakh": "компания"
+  },
+  {
+    "english": "compare",
+    "kazakh": "салыстыру"
+  },
+  {
+    "english": "computer",
+    "kazakh": "компьютер"
+  },
+  {
+    "english": "concern",
+    "kazakh": "алаңдаушылық"
+  },
+  {
+    "english": "condition",
+    "kazakh": "жағдай"
+  },
+  {
+    "english": "conference",
+    "kazakh": "конференция"
+  },
+  {
+    "english": "Congress",
+    "kazakh": "Конгресс"
+  },
+  {
+    "english": "consider",
+    "kazakh": "қарастыру"
+  },
+  {
+    "english": "consumer",
+    "kazakh": "тұтынушы"
+  },
+  {
+    "english": "contain",
+    "kazakh": "қамтиды"
+  },
+  {
+    "english": "continue",
+    "kazakh": "жалғастыру"
+  },
+  {
+    "english": "control",
+    "kazakh": "бақылау"
+  },
+  {
+    "english": "cost",
+    "kazakh": "құны"
+  },
+  {
+    "english": "could",
+    "kazakh": "мүмкін"
+  },
+  {
+    "english": "country",
+    "kazakh": "ел"
+  },
+  {
+    "english": "couple",
+    "kazakh": "жұп"
+  },
+  {
+    "english": "course",
+    "kazakh": "курс"
+  },
+  {
+    "english": "court",
+    "kazakh": "сот"
+  },
+  {
+    "english": "cover",
+    "kazakh": "жабу"
+  },
+  {
+    "english": "create",
+    "kazakh": "жасау"
+  },
+  {
+    "english": "crime",
+    "kazakh": "қылмыс"
+  },
+  {
+    "english": "cultural",
+    "kazakh": "мәдени"
+  },
+  {
+    "english": "culture",
+    "kazakh": "мәдениет"
+  },
+  {
+    "english": "cup",
+    "kazakh": "кесе"
+  },
+  {
+    "english": "current",
+    "kazakh": "ток"
+  },
+  {
+    "english": "customer",
+    "kazakh": "тұтынушы"
+  },
+  {
+    "english": "cut",
+    "kazakh": "кесу"
+  },
+  {
+    "english": "dark",
+    "kazakh": "қараңғы"
+  },
+  {
+    "english": "data",
+    "kazakh": "деректер"
+  },
+  {
+    "english": "daughter",
+    "kazakh": "қызы"
+  },
+  {
+    "english": "day",
+    "kazakh": "күні"
+  },
+  {
+    "english": "dead",
+    "kazakh": "өлі"
+  },
+  {
+    "english": "deal",
+    "kazakh": "мәміле"
+  },
+  {
+    "english": "death",
+    "kazakh": "өлім"
+  },
+  {
+    "english": "debate",
+    "kazakh": "пікірталас"
+  },
+  {
+    "english": "decade",
+    "kazakh": "онжылдық"
+  },
+  {
+    "english": "decide",
+    "kazakh": "шешу"
+  },
+  {
+    "english": "decision",
+    "kazakh": "шешім"
+  },
+  {
+    "english": "deep",
+    "kazakh": "терең"
+  },
+  {
+    "english": "defense",
+    "kazakh": "қорғаныс"
+  },
+  {
+    "english": "degree",
+    "kazakh": "дәрежесі"
+  },
+  {
+    "english": "Democrat",
+    "kazakh": "Демократ"
+  },
+  {
+    "english": "democratic",
+    "kazakh": "демократиялық"
+  },
+  {
+    "english": "describe",
+    "kazakh": "сипаттау"
+  },
+  {
+    "english": "design",
+    "kazakh": "дизайн"
+  },
+  {
+    "english": "despite",
+    "kazakh": "қарамастан"
+  },
+  {
+    "english": "detail",
+    "kazakh": "деталь"
+  },
+  {
+    "english": "determine",
+    "kazakh": "анықтау"
+  },
+  {
+    "english": "develop",
+    "kazakh": "дамыту"
+  },
+  {
+    "english": "development",
+    "kazakh": "дамыту"
+  },
+  {
+    "english": "die",
+    "kazakh": "өлу"
+  },
+  {
+    "english": "difference",
+    "kazakh": "айырмашылық"
+  },
+  {
+    "english": "different",
+    "kazakh": "әртүрлі"
+  },
+  {
+    "english": "difficult",
+    "kazakh": "қиын"
+  },
+  {
+    "english": "dinner",
+    "kazakh": "кешкі ас"
+  },
+  {
+    "english": "direction",
+    "kazakh": "бағыт"
+  },
+  {
+    "english": "director",
+    "kazakh": "режиссер"
+  },
+  {
+    "english": "discover",
+    "kazakh": "ашу"
+  },
+  {
+    "english": "discuss",
+    "kazakh": "талқылау"
+  },
+  {
+    "english": "discussion",
+    "kazakh": "талқылау"
+  },
+  {
+    "english": "disease",
+    "kazakh": "ауру"
+  },
+  {
+    "english": "do",
+    "kazakh": "істеу"
+  },
+  {
+    "english": "doctor",
+    "kazakh": "дәрігер"
+  },
+  {
+    "english": "dog",
+    "kazakh": "ит"
+  },
+  {
+    "english": "door",
+    "kazakh": "есік"
+  },
+  {
+    "english": "down",
+    "kazakh": "төмен"
+  },
+  {
+    "english": "draw",
+    "kazakh": "сызу"
+  },
+  {
+    "english": "dream",
+    "kazakh": "арман"
+  },
+  {
+    "english": "drive",
+    "kazakh": "жүргізу"
+  },
+  {
+    "english": "drop",
+    "kazakh": "түсіру"
+  },
+  {
+    "english": "drug",
+    "kazakh": "есірткі"
+  },
+  {
+    "english": "during",
+    "kazakh": "кезінде"
+  },
+  {
+    "english": "each",
+    "kazakh": "әрқайсысы"
+  },
+  {
+    "english": "early",
+    "kazakh": "ерте"
+  },
+  {
+    "english": "east",
+    "kazakh": "шығыс"
+  },
+  {
+    "english": "easy",
+    "kazakh": "оңай"
+  },
+  {
+    "english": "eat",
+    "kazakh": "жеу"
+  },
+  {
+    "english": "economic",
+    "kazakh": "экономикалық"
+  },
+  {
+    "english": "economy",
+    "kazakh": "экономика"
+  },
+  {
+    "english": "edge",
+    "kazakh": "жиегі"
+  },
+  {
+    "english": "education",
+    "kazakh": "білім беру"
+  },
+  {
+    "english": "effect",
+    "kazakh": "әсері"
+  },
+  {
+    "english": "effort",
+    "kazakh": "күш"
+  },
+  {
+    "english": "eight",
+    "kazakh": "сегіз"
+  },
+  {
+    "english": "either",
+    "kazakh": "не"
+  },
+  {
+    "english": "election",
+    "kazakh": "сайлау"
+  },
+  {
+    "english": "else",
+    "kazakh": "басқа"
+  },
+  {
+    "english": "employee",
+    "kazakh": "қызметкер"
+  },
+  {
+    "english": "end",
+    "kazakh": "Соңы"
+  },
+  {
+    "english": "energy",
+    "kazakh": "энергия"
+  },
+  {
+    "english": "enjoy",
+    "kazakh": "ләззат алыңыз"
+  },
+  {
+    "english": "enough",
+    "kazakh": "жеткілікті"
+  },
+  {
+    "english": "enter",
+    "kazakh": "енгізіңіз"
+  },
+  {
+    "english": "entire",
+    "kazakh": "тұтас"
+  },
+  {
+    "english": "environment",
+    "kazakh": "қоршаған орта"
+  },
+  {
+    "english": "environmental",
+    "kazakh": "экологиялық"
+  },
+  {
+    "english": "especially",
+    "kazakh": "әсіресе"
+  },
+  {
+    "english": "establish",
+    "kazakh": "орнату"
+  },
+  {
+    "english": "even",
+    "kazakh": "тіпті"
+  },
+  {
+    "english": "evening",
+    "kazakh": "кеш"
+  },
+  {
+    "english": "event",
+    "kazakh": "оқиға"
+  },
+  {
+    "english": "ever",
+    "kazakh": "әрқашан"
+  },
+  {
+    "english": "every",
+    "kazakh": "сайын"
+  },
+  {
+    "english": "everybody",
+    "kazakh": "барлығы"
+  },
+  {
+    "english": "everyone",
+    "kazakh": "барлығы"
+  },
+  {
+    "english": "everything",
+    "kazakh": "бәрі"
+  },
+  {
+    "english": "evidence",
+    "kazakh": "дәлел"
+  },
+  {
+    "english": "exactly",
+    "kazakh": "дәл"
+  },
+  {
+    "english": "example",
+    "kazakh": "мысал"
+  },
+  {
+    "english": "executive",
+    "kazakh": "атқарушы"
+  },
+  {
+    "english": "exist",
+    "kazakh": "бар"
+  },
+  {
+    "english": "expect",
+    "kazakh": "күту"
+  },
+  {
+    "english": "experience",
+    "kazakh": "тәжірибе"
+  },
+  {
+    "english": "expert",
+    "kazakh": "сарапшы"
+  },
+  {
+    "english": "explain",
+    "kazakh": "түсіндіру"
+  },
+  {
+    "english": "eye",
+    "kazakh": "көз"
+  },
+  {
+    "english": "face",
+    "kazakh": "бет"
+  },
+  {
+    "english": "fact",
+    "kazakh": "факт"
+  },
+  {
+    "english": "factor",
+    "kazakh": "фактор"
+  },
+  {
+    "english": "fail",
+    "kazakh": "сәтсіз"
+  },
+  {
+    "english": "fall",
+    "kazakh": "құлау"
+  },
+  {
+    "english": "family",
+    "kazakh": "отбасы"
+  },
+  {
+    "english": "far",
+    "kazakh": "алыс"
+  },
+  {
+    "english": "fast",
+    "kazakh": "жылдам"
+  },
+  {
+    "english": "father",
+    "kazakh": "әке"
+  },
+  {
+    "english": "fear",
+    "kazakh": "қорқыныш"
+  },
+  {
+    "english": "federal",
+    "kazakh": "федералды"
+  },
+  {
+    "english": "feel",
+    "kazakh": "сезіну"
+  },
+  {
+    "english": "feeling",
+    "kazakh": "сезім"
+  },
+  {
+    "english": "few",
+    "kazakh": "аз"
+  },
+  {
+    "english": "field",
+    "kazakh": "өріс"
+  },
+  {
+    "english": "fight",
+    "kazakh": "күрес"
+  },
+  {
+    "english": "figure",
+    "kazakh": "фигура"
+  },
+  {
+    "english": "fill",
+    "kazakh": "толтыру"
+  },
+  {
+    "english": "film",
+    "kazakh": "фильм"
+  },
+  {
+    "english": "final",
+    "kazakh": "финал"
+  },
+  {
+    "english": "finally",
+    "kazakh": "ақырында"
+  },
+  {
+    "english": "financial",
+    "kazakh": "қаржылық"
+  },
+  {
+    "english": "find",
+    "kazakh": "табу"
+  },
+  {
+    "english": "fine",
+    "kazakh": "жақсы"
+  },
+  {
+    "english": "finger",
+    "kazakh": "саусақ"
+  },
+  {
+    "english": "finish",
+    "kazakh": "аяқтау"
+  },
+  {
+    "english": "fire",
+    "kazakh": "өрт"
+  },
+  {
+    "english": "firm",
+    "kazakh": "берік"
+  },
+  {
+    "english": "first",
+    "kazakh": "бірінші"
+  },
+  {
+    "english": "fish",
+    "kazakh": "балық"
+  },
+  {
+    "english": "five",
+    "kazakh": "бес"
+  },
+  {
+    "english": "floor",
+    "kazakh": "қабат"
+  },
+  {
+    "english": "fly",
+    "kazakh": "ұшу"
+  },
+  {
+    "english": "focus",
+    "kazakh": "назар аудару"
+  },
+  {
+    "english": "follow",
+    "kazakh": "орындаңыз"
+  },
+  {
+    "english": "food",
+    "kazakh": "тамақ"
+  },
+  {
+    "english": "foot",
+    "kazakh": "аяқ"
+  },
+  {
+    "english": "for",
+    "kazakh": "үшін"
+  },
+  {
+    "english": "force",
+    "kazakh": "күш"
+  },
+  {
+    "english": "foreign",
+    "kazakh": "шетелдік"
+  },
+  {
+    "english": "forget",
+    "kazakh": "ұмыт"
+  },
+  {
+    "english": "form",
+    "kazakh": "пішін"
+  },
+  {
+    "english": "former",
+    "kazakh": "бұрынғы"
+  },
+  {
+    "english": "forward",
+    "kazakh": "алға"
+  },
+  {
+    "english": "four",
+    "kazakh": "төрт"
+  },
+  {
+    "english": "free",
+    "kazakh": "тегін"
+  },
+  {
+    "english": "friend",
+    "kazakh": "дос"
+  },
+  {
+    "english": "from",
+    "kazakh": "бастап"
+  },
+  {
+    "english": "front",
+    "kazakh": "алдыңғы"
+  },
+  {
+    "english": "full",
+    "kazakh": "толық"
+  },
+  {
+    "english": "fund",
+    "kazakh": "қор"
+  },
+  {
+    "english": "future",
+    "kazakh": "болашақ"
+  },
+  {
+    "english": "game",
+    "kazakh": "ойын"
+  },
+  {
+    "english": "garden",
+    "kazakh": "бақша"
+  },
+  {
+    "english": "gas",
+    "kazakh": "газ"
+  },
+  {
+    "english": "general",
+    "kazakh": "жалпы"
+  },
+  {
+    "english": "generation",
+    "kazakh": "ұрпақ"
+  },
+  {
+    "english": "get",
+    "kazakh": "алу"
+  },
+  {
+    "english": "girl",
+    "kazakh": "қыз"
+  },
+  {
+    "english": "give",
+    "kazakh": "беру"
+  },
+  {
+    "english": "glass",
+    "kazakh": "шыны"
+  },
+  {
+    "english": "go",
+    "kazakh": "бару"
+  },
+  {
+    "english": "goal",
+    "kazakh": "мақсат"
+  },
+  {
+    "english": "good",
+    "kazakh": "жақсы"
+  },
+  {
+    "english": "government",
+    "kazakh": "үкімет"
+  },
+  {
+    "english": "great",
+    "kazakh": "тамаша"
+  },
+  {
+    "english": "green",
+    "kazakh": "жасыл"
+  },
+  {
+    "english": "ground",
+    "kazakh": "жер"
+  },
+  {
+    "english": "group",
+    "kazakh": "топ"
+  },
+  {
+    "english": "grow",
+    "kazakh": "өсу"
+  },
+  {
+    "english": "growth",
+    "kazakh": "өсу"
+  },
+  {
+    "english": "guess",
+    "kazakh": "болжау"
+  },
+  {
+    "english": "gun",
+    "kazakh": "мылтық"
+  },
+  {
+    "english": "guy",
+    "kazakh": "жігіт"
+  },
+  {
+    "english": "hair",
+    "kazakh": "шаш"
+  },
+  {
+    "english": "half",
+    "kazakh": "жартысы"
+  },
+  {
+    "english": "hand",
+    "kazakh": "қол"
+  },
+  {
+    "english": "hang",
+    "kazakh": "ілу"
+  },
+  {
+    "english": "happen",
+    "kazakh": "орын алу"
+  },
+  {
+    "english": "happy",
+    "kazakh": "бақытты"
+  },
+  {
+    "english": "hard",
+    "kazakh": "қиын"
+  },
+  {
+    "english": "have",
+    "kazakh": "бар"
+  },
+  {
+    "english": "he",
+    "kazakh": "ол"
+  },
+  {
+    "english": "head",
+    "kazakh": "бас"
+  },
+  {
+    "english": "health",
+    "kazakh": "денсаулық"
+  },
+  {
+    "english": "hear",
+    "kazakh": "есту"
+  },
+  {
+    "english": "heart",
+    "kazakh": "жүрек"
+  },
+  {
+    "english": "heat",
+    "kazakh": "жылу"
+  },
+  {
+    "english": "heavy",
+    "kazakh": "ауыр"
+  },
+  {
+    "english": "help",
+    "kazakh": "көмек"
+  },
+  {
+    "english": "her",
+    "kazakh": "оның"
+  },
+  {
+    "english": "here",
+    "kazakh": "Мұнда"
+  },
+  {
+    "english": "herself",
+    "kazakh": "өзі"
+  },
+  {
+    "english": "high",
+    "kazakh": "жоғары"
+  },
+  {
+    "english": "him",
+    "kazakh": "ол"
+  },
+  {
+    "english": "himself",
+    "kazakh": "өзі"
+  },
+  {
+    "english": "his",
+    "kazakh": "оның"
+  },
+  {
+    "english": "history",
+    "kazakh": "тарих"
+  },
+  {
+    "english": "hit",
+    "kazakh": "соққы"
+  },
+  {
+    "english": "hold",
+    "kazakh": "ұстаңыз"
+  },
+  {
+    "english": "home",
+    "kazakh": "үй"
+  },
+  {
+    "english": "hope",
+    "kazakh": "үміт"
+  },
+  {
+    "english": "hospital",
+    "kazakh": "аурухана"
+  },
+  {
+    "english": "hot",
+    "kazakh": "ыстық"
+  },
+  {
+    "english": "hotel",
+    "kazakh": "қонақ үй"
+  },
+  {
+    "english": "hour",
+    "kazakh": "сағат"
+  },
+  {
+    "english": "house",
+    "kazakh": "үй"
+  },
+  {
+    "english": "how",
+    "kazakh": "Қалай"
+  },
+  {
+    "english": "however",
+    "kazakh": "дегенмен"
+  },
+  {
+    "english": "huge",
+    "kazakh": "орасан зор"
+  },
+  {
+    "english": "human",
+    "kazakh": "адам"
+  },
+  {
+    "english": "hundred",
+    "kazakh": "жүз"
+  },
+  {
+    "english": "husband",
+    "kazakh": "күйеу"
+  },
+  {
+    "english": "I",
+    "kazakh": "I"
+  },
+  {
+    "english": "idea",
+    "kazakh": "идея"
+  },
+  {
+    "english": "identify",
+    "kazakh": "анықтау"
+  },
+  {
+    "english": "if",
+    "kazakh": "егер"
+  },
+  {
+    "english": "image",
+    "kazakh": "сурет"
+  },
+  {
+    "english": "imagine",
+    "kazakh": "елестету"
+  },
+  {
+    "english": "impact",
+    "kazakh": "әсер ету"
+  },
+  {
+    "english": "important",
+    "kazakh": "маңызды"
+  },
+  {
+    "english": "improve",
+    "kazakh": "жақсарту"
+  },
+  {
+    "english": "in",
+    "kazakh": "жылы"
+  },
+  {
+    "english": "include",
+    "kazakh": "қамтиды"
+  },
+  {
+    "english": "including",
+    "kazakh": "оның ішінде"
+  },
+  {
+    "english": "increase",
+    "kazakh": "арттыру"
+  },
+  {
+    "english": "indeed",
+    "kazakh": "әрине"
+  },
+  {
+    "english": "indicate",
+    "kazakh": "көрсету"
+  },
+  {
+    "english": "individual",
+    "kazakh": "жеке"
+  },
+  {
+    "english": "industry",
+    "kazakh": "өнеркәсіп"
+  },
+  {
+    "english": "information",
+    "kazakh": "ақпарат"
+  },
+  {
+    "english": "inside",
+    "kazakh": "ішінде"
+  },
+  {
+    "english": "instead",
+    "kazakh": "орнына"
+  },
+  {
+    "english": "institution",
+    "kazakh": "мекеме"
+  },
+  {
+    "english": "interest",
+    "kazakh": "қызығушылық"
+  },
+  {
+    "english": "interesting",
+    "kazakh": "қызықты"
+  },
+  {
+    "english": "international",
+    "kazakh": "халықаралық"
+  },
+  {
+    "english": "interview",
+    "kazakh": "сұхбат"
+  },
+  {
+    "english": "into",
+    "kazakh": "ішіне"
+  },
+  {
+    "english": "investment",
+    "kazakh": "инвестиция"
+  },
+  {
+    "english": "involve",
+    "kazakh": "тарту"
+  },
+  {
+    "english": "issue",
+    "kazakh": "мәселе"
+  },
+  {
+    "english": "it",
+    "kazakh": "ол"
+  },
+  {
+    "english": "item",
+    "kazakh": "элемент"
+  },
+  {
+    "english": "its",
+    "kazakh": "оның"
+  },
+  {
+    "english": "itself",
+    "kazakh": "өзі"
+  },
+  {
+    "english": "job",
+    "kazakh": "жұмыс"
+  },
+  {
+    "english": "join",
+    "kazakh": "қосылу"
+  },
+  {
+    "english": "just",
+    "kazakh": "жай"
+  },
+  {
+    "english": "keep",
+    "kazakh": "сақтау"
+  },
+  {
+    "english": "key",
+    "kazakh": "кілт"
+  },
+  {
+    "english": "kid",
+    "kazakh": "бала"
+  },
+  {
+    "english": "kill",
+    "kazakh": "өлтіру"
+  },
+  {
+    "english": "kind",
+    "kazakh": "мейірімді"
+  },
+  {
+    "english": "kitchen",
+    "kazakh": "ас үй"
+  },
+  {
+    "english": "know",
+    "kazakh": "білу"
+  },
+  {
+    "english": "knowledge",
+    "kazakh": "білім"
+  },
+  {
+    "english": "land",
+    "kazakh": "жер"
+  },
+  {
+    "english": "language",
+    "kazakh": "тіл"
+  },
+  {
+    "english": "large",
+    "kazakh": "үлкен"
+  },
+  {
+    "english": "last",
+    "kazakh": "соңғы"
+  },
+  {
+    "english": "late",
+    "kazakh": "кеш"
+  },
+  {
+    "english": "later",
+    "kazakh": "кейінірек"
+  },
+  {
+    "english": "laugh",
+    "kazakh": "күл"
+  },
+  {
+    "english": "law",
+    "kazakh": "заң"
+  },
+  {
+    "english": "lawyer",
+    "kazakh": "заңгер"
+  },
+  {
+    "english": "lay",
+    "kazakh": "жату"
+  },
+  {
+    "english": "lead",
+    "kazakh": "қорғасын"
+  },
+  {
+    "english": "leader",
+    "kazakh": "көшбасшы"
+  },
+  {
+    "english": "learn",
+    "kazakh": "үйрену"
+  },
+  {
+    "english": "least",
+    "kazakh": "кем дегенде"
+  },
+  {
+    "english": "leave",
+    "kazakh": "кету"
+  },
+  {
+    "english": "left",
+    "kazakh": "қалды"
+  },
+  {
+    "english": "leg",
+    "kazakh": "аяқ"
+  },
+  {
+    "english": "legal",
+    "kazakh": "заңды"
+  },
+  {
+    "english": "less",
+    "kazakh": "Аздау"
+  },
+  {
+    "english": "let",
+    "kazakh": "болсын"
+  },
+  {
+    "english": "letter",
+    "kazakh": "хат"
+  },
+  {
+    "english": "level",
+    "kazakh": "деңгейі"
+  },
+  {
+    "english": "lie",
+    "kazakh": "өтірік"
+  },
+  {
+    "english": "life",
+    "kazakh": "өмір"
+  },
+  {
+    "english": "light",
+    "kazakh": "жарық"
+  },
+  {
+    "english": "like",
+    "kazakh": "сияқты"
+  },
+  {
+    "english": "likely",
+    "kazakh": "ықтимал"
+  },
+  {
+    "english": "line",
+    "kazakh": "сызық"
+  },
+  {
+    "english": "list",
+    "kazakh": "тізім"
+  },
+  {
+    "english": "listen",
+    "kazakh": "тыңда"
+  },
+  {
+    "english": "little",
+    "kazakh": "аз"
+  },
+  {
+    "english": "live",
+    "kazakh": "өмір сүр"
+  },
+  {
+    "english": "local",
+    "kazakh": "жергілікті"
+  },
+  {
+    "english": "long",
+    "kazakh": "ұзақ"
+  },
+  {
+    "english": "look",
+    "kazakh": "қара"
+  },
+  {
+    "english": "lose",
+    "kazakh": "жоғалтады"
+  },
+  {
+    "english": "loss",
+    "kazakh": "жоғалту"
+  },
+  {
+    "english": "lot",
+    "kazakh": "көп"
+  },
+  {
+    "english": "love",
+    "kazakh": "махаббат"
+  },
+  {
+    "english": "low",
+    "kazakh": "төмен"
+  },
+  {
+    "english": "machine",
+    "kazakh": "машина"
+  },
+  {
+    "english": "magazine",
+    "kazakh": "журнал"
+  },
+  {
+    "english": "main",
+    "kazakh": "негізгі"
+  },
+  {
+    "english": "maintain",
+    "kazakh": "сақтау"
+  },
+  {
+    "english": "major",
+    "kazakh": "майор"
+  },
+  {
+    "english": "majority",
+    "kazakh": "көпшілік"
+  },
+  {
+    "english": "make",
+    "kazakh": "жасау"
+  },
+  {
+    "english": "man",
+    "kazakh": "адам"
+  },
+  {
+    "english": "manage",
+    "kazakh": "басқару"
+  },
+  {
+    "english": "management",
+    "kazakh": "басқару"
+  },
+  {
+    "english": "manager",
+    "kazakh": "менеджер"
+  },
+  {
+    "english": "many",
+    "kazakh": "көп"
+  },
+  {
+    "english": "market",
+    "kazakh": "нарық"
+  },
+  {
+    "english": "marriage",
+    "kazakh": "неке"
+  },
+  {
+    "english": "material",
+    "kazakh": "материал"
+  },
+  {
+    "english": "matter",
+    "kazakh": "мәселе"
+  },
+  {
+    "english": "may",
+    "kazakh": "мүмкін"
+  },
+  {
+    "english": "maybe",
+    "kazakh": "мүмкін"
+  },
+  {
+    "english": "me",
+    "kazakh": "мен"
+  },
+  {
+    "english": "mean",
+    "kazakh": "білдіреді"
+  },
+  {
+    "english": "measure",
+    "kazakh": "өлшеу"
+  },
+  {
+    "english": "media",
+    "kazakh": "бұқаралық ақпарат құралдары"
+  },
+  {
+    "english": "medical",
+    "kazakh": "медициналық"
+  },
+  {
+    "english": "meet",
+    "kazakh": "кездесу"
+  },
+  {
+    "english": "meeting",
+    "kazakh": "кездесу"
+  },
+  {
+    "english": "member",
+    "kazakh": "мүшесі"
+  },
+  {
+    "english": "memory",
+    "kazakh": "жады"
+  },
+  {
+    "english": "mention",
+    "kazakh": "атап өту"
+  },
+  {
+    "english": "message",
+    "kazakh": "хабар"
+  },
+  {
+    "english": "method",
+    "kazakh": "әдіс"
+  },
+  {
+    "english": "middle",
+    "kazakh": "орта"
+  },
+  {
+    "english": "might",
+    "kazakh": "мүмкін"
+  },
+  {
+    "english": "military",
+    "kazakh": "әскери"
+  },
+  {
+    "english": "million",
+    "kazakh": "миллион"
+  },
+  {
+    "english": "mind",
+    "kazakh": "ақыл"
+  },
+  {
+    "english": "minute",
+    "kazakh": "минут"
+  },
+  {
+    "english": "miss",
+    "kazakh": "сағыныш"
+  },
+  {
+    "english": "mission",
+    "kazakh": "миссия"
+  },
+  {
+    "english": "model",
+    "kazakh": "үлгі"
+  },
+  {
+    "english": "modern",
+    "kazakh": "заманауи"
+  },
+  {
+    "english": "moment",
+    "kazakh": "сәт"
+  },
+  {
+    "english": "money",
+    "kazakh": "ақша"
+  },
+  {
+    "english": "month",
+    "kazakh": "ай"
+  },
+  {
+    "english": "more",
+    "kazakh": "көбірек"
+  },
+  {
+    "english": "morning",
+    "kazakh": "таң"
+  },
+  {
+    "english": "most",
+    "kazakh": "көпшілігі"
+  },
+  {
+    "english": "mother",
+    "kazakh": "ана"
+  },
+  {
+    "english": "mouth",
+    "kazakh": "ауыз"
+  },
+  {
+    "english": "move",
+    "kazakh": "жылжыту"
+  },
+  {
+    "english": "movement",
+    "kazakh": "қозғалыс"
+  },
+  {
+    "english": "movie",
+    "kazakh": "фильм"
+  },
+  {
+    "english": "Mr",
+    "kazakh": "Мырза"
+  },
+  {
+    "english": "Mrs",
+    "kazakh": "Ханым"
+  },
+  {
+    "english": "much",
+    "kazakh": "көп"
+  },
+  {
+    "english": "music",
+    "kazakh": "музыка"
+  },
+  {
+    "english": "must",
+    "kazakh": "міндетті"
+  },
+  {
+    "english": "my",
+    "kazakh": "менің"
+  },
+  {
+    "english": "myself",
+    "kazakh": "өзім"
+  },
+  {
+    "english": "name",
+    "kazakh": "аты"
+  },
+  {
+    "english": "nation",
+    "kazakh": "ұлт"
+  },
+  {
+    "english": "national",
+    "kazakh": "ұлттық"
+  },
+  {
+    "english": "natural",
+    "kazakh": "табиғи"
+  },
+  {
+    "english": "nature",
+    "kazakh": "табиғат"
+  },
+  {
+    "english": "near",
+    "kazakh": "жақын"
+  },
+  {
+    "english": "nearly",
+    "kazakh": "дерлік"
+  },
+  {
+    "english": "necessary",
+    "kazakh": "қажет"
+  },
+  {
+    "english": "need",
+    "kazakh": "қажет"
+  },
+  {
+    "english": "network",
+    "kazakh": "желі"
+  },
+  {
+    "english": "never",
+    "kazakh": "ешқашан"
+  },
+  {
+    "english": "new",
+    "kazakh": "жаңа"
+  },
+  {
+    "english": "news",
+    "kazakh": "жаңалықтар"
+  },
+  {
+    "english": "newspaper",
+    "kazakh": "газет"
+  },
+  {
+    "english": "next",
+    "kazakh": "келесі"
+  },
+  {
+    "english": "nice",
+    "kazakh": "жақсы"
+  },
+  {
+    "english": "night",
+    "kazakh": "түн"
+  },
+  {
+    "english": "no",
+    "kazakh": "жоқ"
+  },
+  {
+    "english": "none",
+    "kazakh": "жоқ"
+  },
+  {
+    "english": "nor",
+    "kazakh": "не"
+  },
+  {
+    "english": "north",
+    "kazakh": "солтүстік"
+  },
+  {
+    "english": "not",
+    "kazakh": "емес"
+  },
+  {
+    "english": "note",
+    "kazakh": "Ескерту"
+  },
+  {
+    "english": "nothing",
+    "kazakh": "ештеңе"
+  },
+  {
+    "english": "notice",
+    "kazakh": "ескерту"
+  },
+  {
+    "english": "now",
+    "kazakh": "қазір"
+  },
+  {
+    "english": "n't",
+    "kazakh": "жоқ"
+  },
+  {
+    "english": "number",
+    "kazakh": "саны"
+  },
+  {
+    "english": "occur",
+    "kazakh": "орын алады"
+  },
+  {
+    "english": "of",
+    "kazakh": "#ИМЯ?"
+  },
+  {
+    "english": "off",
+    "kazakh": "өшірулі"
+  },
+  {
+    "english": "offer",
+    "kazakh": "ұсыныс"
+  },
+  {
+    "english": "office",
+    "kazakh": "кеңсе"
+  },
+  {
+    "english": "officer",
+    "kazakh": "офицер"
+  },
+  {
+    "english": "official",
+    "kazakh": "ресми"
+  },
+  {
+    "english": "often",
+    "kazakh": "жиі"
+  },
+  {
+    "english": "oh",
+    "kazakh": "о"
+  },
+  {
+    "english": "oil",
+    "kazakh": "май"
+  },
+  {
+    "english": "ok",
+    "kazakh": "жарайды"
+  },
+  {
+    "english": "old",
+    "kazakh": "ескі"
+  },
+  {
+    "english": "on",
+    "kazakh": "қосулы"
+  },
+  {
+    "english": "once",
+    "kazakh": "бір рет"
+  },
+  {
+    "english": "one",
+    "kazakh": "бір"
+  },
+  {
+    "english": "only",
+    "kazakh": "тек"
+  },
+  {
+    "english": "onto",
+    "kazakh": "үстіне"
+  },
+  {
+    "english": "open",
+    "kazakh": "ашық"
+  },
+  {
+    "english": "operation",
+    "kazakh": "операция"
+  },
+  {
+    "english": "opportunity",
+    "kazakh": "мүмкіндік"
+  },
+  {
+    "english": "option",
+    "kazakh": "опция"
+  },
+  {
+    "english": "or",
+    "kazakh": "немесе"
+  },
+  {
+    "english": "order",
+    "kazakh": "тапсырыс"
+  },
+  {
+    "english": "organization",
+    "kazakh": "ұйымдастыру"
+  },
+  {
+    "english": "other",
+    "kazakh": "басқа"
+  },
+  {
+    "english": "others",
+    "kazakh": "басқалар"
+  },
+  {
+    "english": "our",
+    "kazakh": "біздің"
+  },
+  {
+    "english": "out",
+    "kazakh": "шығып"
+  },
+  {
+    "english": "outside",
+    "kazakh": "сыртында"
+  },
+  {
+    "english": "over",
+    "kazakh": "бітті"
+  },
+  {
+    "english": "own",
+    "kazakh": "меншік"
+  },
+  {
+    "english": "owner",
+    "kazakh": "иесі"
+  },
+  {
+    "english": "page",
+    "kazakh": "бет"
+  },
+  {
+    "english": "pain",
+    "kazakh": "ауырсыну"
+  },
+  {
+    "english": "painting",
+    "kazakh": "кескіндеме"
+  },
+  {
+    "english": "paper",
+    "kazakh": "қағаз"
+  },
+  {
+    "english": "parent",
+    "kazakh": "ата-ана"
+  },
+  {
+    "english": "part",
+    "kazakh": "бөлігі"
+  },
+  {
+    "english": "participant",
+    "kazakh": "қатысушы"
+  },
+  {
+    "english": "particular",
+    "kazakh": "ерекше"
+  },
+  {
+    "english": "particularly",
+    "kazakh": "әсіресе"
+  },
+  {
+    "english": "partner",
+    "kazakh": "серіктес"
+  },
+  {
+    "english": "party",
+    "kazakh": "кеш"
+  },
+  {
+    "english": "pass",
+    "kazakh": "өту"
+  },
+  {
+    "english": "past",
+    "kazakh": "өткен"
+  },
+  {
+    "english": "patient",
+    "kazakh": "пациент"
+  },
+  {
+    "english": "pattern",
+    "kazakh": "үлгі"
+  },
+  {
+    "english": "pay",
+    "kazakh": "төлеу"
+  },
+  {
+    "english": "peace",
+    "kazakh": "бейбітшілік"
+  },
+  {
+    "english": "people",
+    "kazakh": "адамдар"
+  },
+  {
+    "english": "per",
+    "kazakh": "пер"
+  },
+  {
+    "english": "perform",
+    "kazakh": "орындау"
+  },
+  {
+    "english": "performance",
+    "kazakh": "өнімділік"
+  },
+  {
+    "english": "perhaps",
+    "kazakh": "мүмкін"
+  },
+  {
+    "english": "period",
+    "kazakh": "кезең"
+  },
+  {
+    "english": "person",
+    "kazakh": "адам"
+  },
+  {
+    "english": "personal",
+    "kazakh": "жеке"
+  },
+  {
+    "english": "phone",
+    "kazakh": "телефон"
+  },
+  {
+    "english": "physical",
+    "kazakh": "физикалық"
+  },
+  {
+    "english": "pick",
+    "kazakh": "таңдау"
+  },
+  {
+    "english": "picture",
+    "kazakh": "сурет"
+  },
+  {
+    "english": "piece",
+    "kazakh": "дана"
+  },
+  {
+    "english": "place",
+    "kazakh": "орын"
+  },
+  {
+    "english": "plan",
+    "kazakh": "жоспар"
+  },
+  {
+    "english": "plant",
+    "kazakh": "өсімдік"
+  },
+  {
+    "english": "play",
+    "kazakh": "ойнау"
+  },
+  {
+    "english": "player",
+    "kazakh": "ойыншы"
+  },
+  {
+    "english": "PM",
+    "kazakh": "PM"
+  },
+  {
+    "english": "point",
+    "kazakh": "нүкте"
+  },
+  {
+    "english": "police",
+    "kazakh": "полиция"
+  },
+  {
+    "english": "policy",
+    "kazakh": "саясат"
+  },
+  {
+    "english": "political",
+    "kazakh": "саяси"
+  },
+  {
+    "english": "politics",
+    "kazakh": "саясат"
+  },
+  {
+    "english": "poor",
+    "kazakh": "кедей"
+  },
+  {
+    "english": "popular",
+    "kazakh": "танымал"
+  },
+  {
+    "english": "population",
+    "kazakh": "халық"
+  },
+  {
+    "english": "position",
+    "kazakh": "позиция"
+  },
+  {
+    "english": "positive",
+    "kazakh": "оң"
+  },
+  {
+    "english": "possible",
+    "kazakh": "мүмкін"
+  },
+  {
+    "english": "power",
+    "kazakh": "қуат"
+  },
+  {
+    "english": "practice",
+    "kazakh": "тәжірибе"
+  },
+  {
+    "english": "prepare",
+    "kazakh": "дайындау"
+  },
+  {
+    "english": "present",
+    "kazakh": "қазіргі"
+  },
+  {
+    "english": "president",
+    "kazakh": "президент"
+  },
+  {
+    "english": "pressure",
+    "kazakh": "қысым"
+  },
+  {
+    "english": "pretty",
+    "kazakh": "әдемі"
+  },
+  {
+    "english": "prevent",
+    "kazakh": "алдын алу"
+  },
+  {
+    "english": "price",
+    "kazakh": "бағасы"
+  },
+  {
+    "english": "private",
+    "kazakh": "жеке"
+  },
+  {
+    "english": "probably",
+    "kazakh": "бәлкім"
+  },
+  {
+    "english": "problem",
+    "kazakh": "мәселе"
+  },
+  {
+    "english": "process",
+    "kazakh": "процесс"
+  },
+  {
+    "english": "produce",
+    "kazakh": "шығару"
+  },
+  {
+    "english": "product",
+    "kazakh": "өнім"
+  },
+  {
+    "english": "production",
+    "kazakh": "өндіріс"
+  },
+  {
+    "english": "professional",
+    "kazakh": "кәсіби"
+  },
+  {
+    "english": "professor",
+    "kazakh": "профессор"
+  },
+  {
+    "english": "program",
+    "kazakh": "бағдарламасы"
+  },
+  {
+    "english": "project",
+    "kazakh": "жоба"
+  },
+  {
+    "english": "property",
+    "kazakh": "мүлік"
+  },
+  {
+    "english": "protect",
+    "kazakh": "қорғау"
+  },
+  {
+    "english": "prove",
+    "kazakh": "дәлелдеу"
+  },
+  {
+    "english": "provide",
+    "kazakh": "қамтамасыз ету"
+  },
+  {
+    "english": "public",
+    "kazakh": "қоғамдық"
+  },
+  {
+    "english": "pull",
+    "kazakh": "Тарт"
+  },
+  {
+    "english": "purpose",
+    "kazakh": "мақсаты"
+  },
+  {
+    "english": "push",
+    "kazakh": "Басыңыз"
+  },
+  {
+    "english": "put",
+    "kazakh": "қою"
+  },
+  {
+    "english": "quality",
+    "kazakh": "сапасы"
+  },
+  {
+    "english": "question",
+    "kazakh": "сұрақ"
+  },
+  {
+    "english": "quickly",
+    "kazakh": "тез"
+  },
+  {
+    "english": "quite",
+    "kazakh": "әбден"
+  },
+  {
+    "english": "race",
+    "kazakh": "жарыс"
+  },
+  {
+    "english": "radio",
+    "kazakh": "радио"
+  },
+  {
+    "english": "raise",
+    "kazakh": "көтеру"
+  },
+  {
+    "english": "range",
+    "kazakh": "диапазон"
+  },
+  {
+    "english": "rate",
+    "kazakh": "мөлшерлемесі"
+  },
+  {
+    "english": "rather",
+    "kazakh": "керісінше"
+  },
+  {
+    "english": "reach",
+    "kazakh": "жету"
+  },
+  {
+    "english": "read",
+    "kazakh": "оқыңыз"
+  },
+  {
+    "english": "ready",
+    "kazakh": "дайын"
+  },
+  {
+    "english": "real",
+    "kazakh": "шынайы"
+  },
+  {
+    "english": "reality",
+    "kazakh": "шындық"
+  },
+  {
+    "english": "realize",
+    "kazakh": "түсіну"
+  },
+  {
+    "english": "really",
+    "kazakh": "шынымен"
+  },
+  {
+    "english": "reason",
+    "kazakh": "себебі"
+  },
+  {
+    "english": "receive",
+    "kazakh": "алу"
+  },
+  {
+    "english": "recent",
+    "kazakh": "жақында"
+  },
+  {
+    "english": "recently",
+    "kazakh": "жақында"
+  },
+  {
+    "english": "recognize",
+    "kazakh": "тану"
+  },
+  {
+    "english": "record",
+    "kazakh": "жазба"
+  },
+  {
+    "english": "red",
+    "kazakh": "қызыл"
+  },
+  {
+    "english": "reduce",
+    "kazakh": "азайту"
+  },
+  {
+    "english": "reflect",
+    "kazakh": "көрсету"
+  },
+  {
+    "english": "region",
+    "kazakh": "аймақ"
+  },
+  {
+    "english": "relate",
+    "kazakh": "байланыстыру"
+  },
+  {
+    "english": "relationship",
+    "kazakh": "қатынас"
+  },
+  {
+    "english": "religious",
+    "kazakh": "діни"
+  },
+  {
+    "english": "remain",
+    "kazakh": "қалады"
+  },
+  {
+    "english": "remember",
+    "kazakh": "есте сақтаңыз"
+  },
+  {
+    "english": "remove",
+    "kazakh": "жою"
+  },
+  {
+    "english": "report",
+    "kazakh": "есеп беру"
+  },
+  {
+    "english": "represent",
+    "kazakh": "білдіреді"
+  },
+  {
+    "english": "Republican",
+    "kazakh": "республикалық"
+  },
+  {
+    "english": "require",
+    "kazakh": "талап етеді"
+  },
+  {
+    "english": "research",
+    "kazakh": "зерттеу"
+  },
+  {
+    "english": "resource",
+    "kazakh": "ресурс"
+  },
+  {
+    "english": "respond",
+    "kazakh": "жауап беру"
+  },
+  {
+    "english": "response",
+    "kazakh": "жауап"
+  },
+  {
+    "english": "responsibility",
+    "kazakh": "жауапкершілік"
+  },
+  {
+    "english": "rest",
+    "kazakh": "демалыс"
+  },
+  {
+    "english": "result",
+    "kazakh": "нәтиже"
+  },
+  {
+    "english": "return",
+    "kazakh": "қайтару"
+  },
+  {
+    "english": "reveal",
+    "kazakh": "ашу"
+  },
+  {
+    "english": "rich",
+    "kazakh": "бай"
+  },
+  {
+    "english": "right",
+    "kazakh": "дұрыс"
+  },
+  {
+    "english": "rise",
+    "kazakh": "көтерілу"
+  },
+  {
+    "english": "risk",
+    "kazakh": "тәуекел"
+  },
+  {
+    "english": "road",
+    "kazakh": "жол"
+  },
+  {
+    "english": "rock",
+    "kazakh": "рок"
+  },
+  {
+    "english": "role",
+    "kazakh": "рөл"
+  },
+  {
+    "english": "room",
+    "kazakh": "бөлме"
+  },
+  {
+    "english": "rule",
+    "kazakh": "ереже"
+  },
+  {
+    "english": "run",
+    "kazakh": "жүгіру"
+  },
+
+  
+  {"english": "safe", "kazakh": "қауіпсіз"},
+  {"english": "same", "kazakh": "бірдей"},
+  {"english": "save", "kazakh": "сақтау"},
+  {"english": "say", "kazakh": "айту"},
+  {"english": "scene", "kazakh": "көрініс"},
+  {"english": "school", "kazakh": "мектеп"},
+  {"english": "science", "kazakh": "ғылым"},
+  {"english": "scientist", "kazakh": "ғалым"},
+  {"english": "score", "kazakh": "ұпай"},
+  {"english": "sea", "kazakh": "теңіз"},
+  {"english": "season", "kazakh": "маусым"},
+  {"english": "seat", "kazakh": "орындық"},
+  {"english": "second", "kazakh": "екінші"},
+  {"english": "section", "kazakh": "бөлім"},
+  {"english": "security", "kazakh": "қауіпсіздік"},
+  {"english": "see", "kazakh": "қараңыз"},
+  {"english": "seek", "kazakh": "іздеу"},
+  {"english": "seem", "kazakh": "көрінеді"},
+  {"english": "sell", "kazakh": "сату"},
+  {"english": "send", "kazakh": "жіберу"},
+  {"english": "senior", "kazakh": "аға"},
+  {"english": "sense", "kazakh": "сезім"},
+  {"english": "series", "kazakh": "сериясы"},
+  {"english": "serious", "kazakh": "ауыр"},
+  {"english": "serve", "kazakh": "қызмет ету"},
+  {"english": "service", "kazakh": "қызмет"},
+  {"english": "set", "kazakh": "орнату"},
+  {"english": "seven", "kazakh": "Жеті"},
+  {"english": "several", "kazakh": "бірнеше"},
+  {"english": "sex", "kazakh": "жыныстық қатынас"},
+  {"english": "sexual", "kazakh": "жыныстық"},
+  {"english": "shake", "kazakh": "шайқау"},
+  {"english": "share", "kazakh": "бөлісу"},
+  {"english": "she", "kazakh": "ол"},
+  {"english": "shoot", "kazakh": "ату"},
+  {"english": "short", "kazakh": "қысқа"},
+  {"english": "shot", "kazakh": "ату"},
+  {"english": "should", "kazakh": "керек"},
+  {"english": "shoulder", "kazakh": "иық"},
+  {"english": "show", "kazakh": "көрсету"},
+  {"english": "side", "kazakh": "жағы"},
+  {"english": "sign", "kazakh": "белгісі"},
+  {"english": "significant", "kazakh": "маңызды"},
+  {"english": "similar", "kazakh": "ұқсас"},
+  {"english": "simple", "kazakh": "қарапайым"},
+  {"english": "simply", "kazakh": "жай"},
+  {"english": "since", "kazakh": "бері"},
+  {"english": "sing", "kazakh": "ән айту"},
+  {"english": "single", "kazakh": "бойдақ"},
+  {"english": "sister", "kazakh": "әпке"},
+  {"english": "sit", "kazakh": "отыру"},
+  {"english": "site", "kazakh": "сайт"},
+  {"english": "situation", "kazakh": "жағдай"},
+  {"english": "six", "kazakh": "алты"},
+  {"english": "size", "kazakh": "өлшемі"},
+  {"english": "skill", "kazakh": "шеберлік"},
+  {"english": "skin", "kazakh": "тері"},
+  {"english": "small", "kazakh": "кішкентай"},
+  {"english": "smile", "kazakh": "күлу"},
+  {"english": "so", "kazakh": "солай"},
+  {"english": "social", "kazakh": "әлеуметтік"},
+  {"english": "society", "kazakh": "қоғам"},
+  {"english": "soldier", "kazakh": "солдат"},
+  {"english": "some", "kazakh": "кейбір"},
+  {"english": "somebody", "kazakh": "біреу"},
+  {"english": "someone", "kazakh": "біреу"},
+  {"english": "something", "kazakh": "бірдеңе"},
+  {"english": "sometimes", "kazakh": "кейде"},
+  {"english": "son", "kazakh": "ұлы"},
+  {"english": "song", "kazakh": "ән"},
+  {"english": "soon", "kazakh": "жақын арада"},
+  {"english": "sort", "kazakh": "сұрыптау"},
+  {"english": "sound", "kazakh": "дыбыс"},
+  {"english": "source", "kazakh": "көзі"},
+  {"english": "south", "kazakh": "оңтүстік"},
+  {"english": "southern", "kazakh": "оңтүстік"},
+  {"english": "space", "kazakh": "кеңістік"},
+  {"english": "speak", "kazakh": "сөйлеу"},
+  {"english": "special", "kazakh": "ерекше"},
+  {"english": "specific", "kazakh": "нақты"},
+  {"english": "speech", "kazakh": "сөйлеу"},
+  {"english": "spend", "kazakh": "жұмсау"},
+  {"english": "sport", "kazakh": "спорт"},
+  {"english": "spring", "kazakh": "көктем"},
+  {"english": "staff", "kazakh": "персонал"},
+  {"english": "stage", "kazakh": "кезең"},
+  {"english": "stand", "kazakh": "тұру"},
+  {"english": "standard", "kazakh": "стандартты"},
+  {"english": "star", "kazakh": "жұлдыз"},
+  {"english": "start", "kazakh": "бастау"},
+  {"english": "state", "kazakh": "күй"},
+  {"english": "statement", "kazakh": "мәлімдеме"},
+  {"english": "station", "kazakh": "станциясы"},
+  {"english": "stay", "kazakh": "қалу"},
+  {"english": "step", "kazakh": "қадам"},
+  {"english": "still", "kazakh": "әлі"},
+  {"english": "stock", "kazakh": "қор"},
+  {"english": "stop", "kazakh": "тоқта"},
+  {"english": "store", "kazakh": "дүкен"},
+  {"english": "story", "kazakh": "әңгіме"},
+  {"english": "strategy", "kazakh": "стратегиясы"},
+  {"english": "street", "kazakh": "көше"},
+  {"english": "strong", "kazakh": "күшті"},
+  {"english": "structure", "kazakh": "құрылымы"},
+  {"english": "student", "kazakh": "студент"},
+  {"english": "study", "kazakh": "оқу"},
+  {"english": "stuff", "kazakh": "заттар"},
+  {"english": "style", "kazakh": "стиль"},
+  {"english": "subject", "kazakh": "пән"},
+  {"english": "success", "kazakh": "сәттілік"},
+  {"english": "successful", "kazakh": "сәтті"},
+  {"english": "such", "kazakh": "осындай"},
+  {"english": "suddenly", "kazakh": "кенеттен"},
+  {"english": "suffer", "kazakh": "зардап шегу"},
+  {"english": "suggest", "kazakh": "ұсыну"},
+  {"english": "summer", "kazakh": "жаз"},
+  {"english": "support", "kazakh": "қолдау көрсету"},
+  {"english": "sure", "kazakh": "әрине"},
+  {"english": "surface", "kazakh": "беті"},
+  {"english": "system", "kazakh": "жүйесі"},
+  {"english": "table", "kazakh": "кесте"},
+  {"english": "take", "kazakh": "алу"},
+  {"english": "talk", "kazakh": "сөйлесу"},
+  {"english": "task", "kazakh": "тапсырма"},
+  {"english": "tax", "kazakh": "салық"},
+  {"english": "teach", "kazakh": "үйрету"},
+  {"english": "teacher", "kazakh": "мұғалім"},
+  {"english": "team", "kazakh": "команда"},
+  {"english": "technology", "kazakh": "технология"},
+  {"english": "television", "kazakh": "теледидар"},
+  {"english": "tell", "kazakh": "айт"},
+  {"english": "ten", "kazakh": "он"},
+  {"english": "tend", "kazakh": "бейім"},
+  {"english": "term", "kazakh": "мерзімі"},
+  {"english": "test", "kazakh": "сынақ"},
+  {"english": "than", "kazakh": "қарағанда"},
+  {"english": "thank", "kazakh": "рахмет"},
+  {"english": "that", "kazakh": "сол"},
+  {"english": "the", "kazakh": "the"},
+  {"english": "their", "kazakh": "олардың"},
+  {"english": "them", "kazakh": "олар"},
+  {"english": "themselves", "kazakh": "өздері"},
+  {"english": "then", "kazakh": "содан кейін"},
+  {"english": "theory", "kazakh": "теория"},
+  {"english": "there", "kazakh": "Ана жерде"},
+  {"english": "these", "kazakh": "осылар"},
+  {"english": "they", "kazakh": "олар"},
+  {"english": "thing", "kazakh": "нәрсе"},
+  {"english": "think", "kazakh": "ойла"},
+  {"english": "third", "kazakh": "үшінші"},
+  {"english": "this", "kazakh": "бұл"},
+  {"english": "those", "kazakh": "сол"},
+  {"english": "though", "kazakh": "дегенмен"},
+  {"english": "thought", "kazakh": "ойланды"},
+  {"english": "thousand", "kazakh": "мың"},
+  {"english": "threat", "kazakh": "қауіп"},
+  {"english": "three", "kazakh": "үш"},
+  {"english": "through", "kazakh": "арқылы"},
+  {"english": "throughout", "kazakh": "бойы"},
+  {"english": "throw", "kazakh": "лақтыру"},
+  {"english": "thus", "kazakh": "осылайша"},
+  {"english": "time", "kazakh": "уақыт"},
+  {"english": "to", "kazakh": "дейін"},
+  {"english": "today", "kazakh": "бүгін"},
+  {"english": "together", "kazakh": "бірге"},
+  {"english": "tonight", "kazakh": "бүгін түнде"},
+  {"english": "too", "kazakh": "да"},
+  {"english": "top", "kazakh": "жоғарғы"},
+  {"english": "total", "kazakh": "жалпы"},
+  {"english": "tough", "kazakh": "қатты"},
+  {"english": "toward", "kazakh": "қарай"},
+  {"english": "town", "kazakh": "қала"},
+  {"english": "trade", "kazakh": "сауда"},
+  {"english": "traditional", "kazakh": "дәстүрлі"},
+  {"english": "training", "kazakh": "жаттығу"},
+  {"english": "travel", "kazakh": "саяхат"},
+  {"english": "treat", "kazakh": "емдеу"},
+  {"english": "treatment", "kazakh": "емдеу"},
+  {"english": "tree", "kazakh": "ағаш"},
+  {"english": "trial", "kazakh": "сот"},
+  {"english": "trip", "kazakh": "сапар"},
+  {"english": "trouble", "kazakh": "қиындық"},
+  {"english": "true", "kazakh": "рас"},
+  {"english": "truth", "kazakh": "шындық"},
+  {"english": "try", "kazakh": "көріңіз"},
+  {"english": "turn", "kazakh": "бұрылыс"},
+  {"english": "TV", "kazakh": "теледидар"},
+  {"english": "two", "kazakh": "екі"},
+  {"english": "type", "kazakh": "түрі"},
+  {"english": "under", "kazakh": "астында"},
+  {"english": "understand", "kazakh": "түсіну"},
+  {"english": "unit", "kazakh": "бірлік"},
+  {"english": "until", "kazakh": "дейін"},
+  {"english": "up", "kazakh": "жоғары"},
+  {"english": "upon", "kazakh": "бойынша"},
+  {"english": "us", "kazakh": "біз"},
+  {"english": "use", "kazakh": "пайдалану"},
+  {"english": "usually", "kazakh": "әдетте"},
+  {"english": "value", "kazakh": "мән"},
+  {"english": "various", "kazakh": "әртүрлі"},
+  {"english": "very", "kazakh": "өте"},
+  {"english": "victim", "kazakh": "құрбан"},
+  {"english": "view", "kazakh": "көрініс"},
+  {"english": "violence", "kazakh": "зорлық-зомбылық"},
+  {"english": "visit", "kazakh": "бару"},
+  {"english": "voice", "kazakh": "дауыс"},
+  {"english": "vote", "kazakh": "дауыс беру"},
+  {"english": "wait", "kazakh": "күт"},
+  {"english": "walk", "kazakh": "жүру"},
+  {"english": "wall", "kazakh": "қабырға"},
+  {"english": "want", "kazakh": "келеді"},
+  {"english": "war", "kazakh": "соғыс"},
+  {"english": "watch", "kazakh": "қарау"},
+  {"english": "water", "kazakh": "су"},
+  {"english": "way", "kazakh": "жол"},
+  {"english": "we", "kazakh": "біз"},
+  {"english": "weapon", "kazakh": "қару"},
+  {"english": "wear", "kazakh": "кию"},
+  {"english": "week", "kazakh": "апта"},
+  {"english": "weight", "kazakh": "салмақ"},
+  {"english": "well", "kazakh": "жақсы"},
+  {"english": "west", "kazakh": "батыс"},
+  {"english": "western", "kazakh": "батыстық"},
+  {"english": "what", "kazakh": "не"},
+  {"english": "whatever", "kazakh": "бәрі бір"},
+  {"english": "when", "kazakh": "қашан"},
+  {"english": "where", "kazakh": "қайда"},
+  {"english": "whether", "kazakh": "ма"},
+  {"english": "which", "kazakh": "қай"},
+  {"english": "while", "kazakh": "кезінде"},
+  {"english": "white", "kazakh": "ақ"},
+  {"english": "who", "kazakh": "кім"},
+  {"english": "whole", "kazakh": "тұтас"},
+  {"english": "whom", "kazakh": "кім"},
+  {"english": "whose", "kazakh": "кімдікі"},
+  {"english": "why", "kazakh": "неге"},
+  {"english": "wide", "kazakh": "кең"},
+  {"english": "wife", "kazakh": "әйелі"},
+  {"english": "will", "kazakh": "ерік"},
+  {"english": "win", "kazakh": "жең"},
+  {"english": "wind", "kazakh": "жел"},
+  {"english": "window", "kazakh": "терезе"},
+  {"english": "wish", "kazakh": "тілек"},
+  {"english": "with", "kazakh": "бірге"},
+  {"english": "within", "kazakh": "ішінде"},
+  {"english": "without", "kazakh": "онсыз"},
+  {"english": "woman", "kazakh": "әйел"},
+  {"english": "wonder", "kazakh": "таңқаларлық"},
+  {"english": "word", "kazakh": "сөз"},
+  {"english": "work", "kazakh": "жұмыс"},
+  {"english": "worker", "kazakh": "жұмысшы"},
+  {"english": "world", "kazakh": "әлем"},
+  {"english": "worry", "kazakh": "уайымдау"},
+  {"english": "would", "kazakh": "болар еді"},
+  {"english": "write", "kazakh": "жазу"},
+  {"english": "writer", "kazakh": "жазушы"},
+  {"english": "wrong", "kazakh": "қате"},
+  {"english": "yard", "kazakh": "аула"},
+  {"english": "yeah", "kazakh": "иә"},
+  {"english": "year", "kazakh": "жыл"},
+  {"english": "yes", "kazakh": "иә"},
+  {"english": "yet", "kazakh": "әлі"},
+  {"english": "you", "kazakh": "сен"},
+  {"english": "young", "kazakh": "жас"},
+  {"english": "your", "kazakh": "сіздің"},
+  {"english": "yourself", "kazakh": "өзің"}
+]

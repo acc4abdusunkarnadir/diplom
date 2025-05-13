@@ -57,6 +57,7 @@ const links = ref([
   { name: "хабарласу", path: "/contact" },
   { name: "Listening", path: "/listening" },
   { name: "Adventure", path: "/adventure" },
+  { name: "Learning System", path: "/learning" },
 ]);
 </script>
 
