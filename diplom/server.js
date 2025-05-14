@@ -41,9 +41,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema);
 
 // OpenAI setup
-const openai = new OpenAI({
-    apiKey: ""
-});
+
 
 async function completeChat(prompt) {
     try {
