@@ -42,7 +42,7 @@ const User = mongoose.model("User", UserSchema);
 
 // OpenAI setup
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: ""
 });
 
 async function completeChat(prompt) {
