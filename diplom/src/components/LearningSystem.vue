@@ -69,105 +69,114 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, computed, onMounted } from "vue";
+import { useRouter } from "vue-router";
 import dataset from "../dataset.json";
 
-export default {
-  name: "LearningSystem",
-  data() {
-    return {
-      allWords: [],
-      currentWordIndex: 0,
-      isFlipped: false,
-      wordsPerBatch: 10,
-      totalWords: 0,
-      learnedWords: new Set(),
-      showLearned: false,
-      currentPage: 1,
-      wordsPerPage: 10,
-    };
-  },
-  computed: {
-    learnedWordsCount() {
-      return this.learnedWords.size;
-    },
-    totalPages() {
-      return Math.ceil(this.totalWords / this.wordsPerPage);
-    },
-    currentWords() {
-      const start = (this.currentPage - 1) * this.wordsPerPage;
-      const end = start + this.wordsPerPage;
-      let words = this.allWords.slice(start, end);
-      if (this.showLearned) {
-        words = words.filter((word) => this.learnedWords.has(word.id));
-      }
-      return words;
-    },
-  },
-  methods: {
-    async fetchWords() {
-      try {
-        const response = dataset;
-        if (Array.isArray(response)) {
-          this.allWords = response.map((word, index) => ({
-            ...word,
-            id: index.toString(),
-          }));
-          this.totalWords = this.allWords.length;
-        }
-      } catch (error) {
-        console.error("Error loading words:", error);
-      }
-    },
-    toggleFlip(index) {
-      this.isFlipped = this.isFlipped === index ? false : index;
-    },
-    toggleLearned(wordId) {
-      if (this.learnedWords.has(wordId)) {
-        this.learnedWords.delete(wordId);
-      } else {
-        this.learnedWords.add(wordId);
-      }
-      this.saveProgress();
-    },
-    saveProgress() {
-      localStorage.setItem(
-        "learnedWords",
-        JSON.stringify(Array.from(this.learnedWords))
-      );
-      localStorage.setItem("currentPage", this.currentPage.toString());
-    },
-    loadProgress() {
-      const savedLearnedWords = localStorage.getItem("learnedWords");
-      const savedPage = localStorage.getItem("currentPage");
+const router = useRouter();
+const isAuthenticated = ref(false);
+const allWords = ref([]);
+const currentWordIndex = ref(0);
+const isFlipped = ref(false);
+const wordsPerBatch = ref(10);
+const totalWords = ref(0);
+const learnedWords = ref(new Set());
+const showLearned = ref(false);
+const currentPage = ref(1);
+const wordsPerPage = ref(10);
 
-      if (savedLearnedWords) {
-        this.learnedWords = new Set(JSON.parse(savedLearnedWords));
-      }
-      if (savedPage) {
-        this.currentPage = parseInt(savedPage);
-      }
-    },
-    loadWords() {
-      // Get learned words from localStorage
-      const learned = new Set(
-        JSON.parse(localStorage.getItem("learnedWords") || "[]")
-      );
-      // Add IDs to dataset words
-      const allWords = dataset.map((word, index) => ({
+// Initialize computed properties
+const learnedWordsCount = computed(() => learnedWords.value.size);
+const totalPages = computed(() =>
+  Math.ceil(totalWords.value / wordsPerPage.value)
+);
+const currentWords = computed(() => {
+  const start = (currentPage.value - 1) * wordsPerPage.value;
+  const end = start + wordsPerPage.value;
+  let words = allWords.value.slice(start, end);
+  if (showLearned.value) {
+    words = words.filter((word) => learnedWords.value.has(word.id));
+  }
+  return words;
+});
+
+// Check authentication and initialize data
+onMounted(async () => {
+  isAuthenticated.value = localStorage.getItem("isAuthenticated") === "true";
+  if (!isAuthenticated.value) {
+    router.push("/signin");
+    return;
+  }
+
+  await fetchWords();
+  loadProgress();
+  loadWords();
+});
+
+async function fetchWords() {
+  try {
+    const response = dataset;
+    if (Array.isArray(response)) {
+      allWords.value = response.map((word, index) => ({
         ...word,
         id: index.toString(),
       }));
-      // Only use words NOT learned
-      this.words = allWords.filter((word) => !learned.has(word.id));
-    },
-  },
-  mounted() {
-    this.fetchWords();
-    this.loadProgress();
-    this.loadWords();
-  },
-};
+      totalWords.value = allWords.value.length;
+    }
+  } catch (error) {
+    console.error("Error loading words:", error);
+  }
+}
+
+function toggleFlip(index) {
+  isFlipped.value = isFlipped.value === index ? false : index;
+}
+
+function toggleLearned(wordId) {
+  if (learnedWords.value.has(wordId)) {
+    learnedWords.value.delete(wordId);
+  } else {
+    learnedWords.value.add(wordId);
+  }
+  saveProgress();
+}
+
+function saveProgress() {
+  localStorage.setItem(
+    "learnedWords",
+    JSON.stringify(Array.from(learnedWords.value))
+  );
+  localStorage.setItem("currentPage", currentPage.value.toString());
+}
+
+function loadProgress() {
+  const savedLearnedWords = localStorage.getItem("learnedWords");
+  const savedPage = localStorage.getItem("currentPage");
+
+  if (savedLearnedWords) {
+    learnedWords.value = new Set(JSON.parse(savedLearnedWords));
+  }
+  if (savedPage) {
+    currentPage.value = parseInt(savedPage);
+  }
+}
+
+function loadWords() {
+  // Get learned words from localStorage
+  const learned = new Set(
+    JSON.parse(localStorage.getItem("learnedWords") || "[]")
+  );
+  // Add IDs to dataset words
+  const allWords = dataset.map((word, index) => ({
+    ...word,
+    id: index.toString(),
+  }));
+  // Only use words NOT learned
+  const words = allWords.filter((word) => !learned.has(word.id));
+  allWords.value = words;
+  totalWords.value = words.length;
+}
 </script>
 
 <style scoped>

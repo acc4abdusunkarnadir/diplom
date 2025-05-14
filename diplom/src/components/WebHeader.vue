@@ -16,17 +16,17 @@
         </div>
       </template>
       <template v-else>
-        <button class="btn login" @click="router.push('/signin')">
+        <button class="btn login" @click="router.push('/signin')">Кіру</button>
+        <button class="btn signup" @click="router.push('/signup')">
           Тіркелу
         </button>
-        <button class="btn signup" @click="router.push('/signup')">Кіру</button>
       </template>
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -38,13 +38,28 @@ const checkAuth = () => {
   username.value = localStorage.getItem("username") || "";
 };
 
-watchEffect(() => {
+onMounted(() => {
   checkAuth();
+  window.addEventListener("storage", checkAuth);
 });
 
 const logout = () => {
+  const username = localStorage.getItem("username");
+
+  // Clear all progress-related items
+  if (username) {
+    localStorage.removeItem(`adventure_progress_${username}`);
+    localStorage.removeItem(`competitive_progress_${username}`);
+    localStorage.removeItem(`quiz_progress_${username}`);
+    localStorage.removeItem(`last_login_${username}`);
+    localStorage.removeItem(`learnedWords`);
+  }
+
+  // Clear authentication data
   localStorage.removeItem("isAuthenticated");
   localStorage.removeItem("username");
+  localStorage.removeItem("user");
+
   isAuthenticated.value = false;
   username.value = "";
   router.push("/signin");
@@ -58,6 +73,7 @@ const links = ref([
   { name: "Listening", path: "/listening" },
   { name: "Adventure", path: "/adventure" },
   { name: "Learning System", path: "/learning" },
+  { name: "Competitive", path: "/competitive" },
 ]);
 </script>
 

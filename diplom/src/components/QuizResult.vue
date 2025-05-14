@@ -10,17 +10,37 @@
             <p>ұпай</p>
           </div>
           <div class="words">
-            <span class="big">{{ correctAnswers.length }}/{{ totalWords }}</span>
+            <span class="big"
+              >{{ correctAnswers.length }}/{{ totalWords }}</span
+            >
             <p>Correct Words</p>
           </div>
         </div>
-        <button @click="retryQuiz" class="retry">Retry</button>
+        <div class="progress-stats">
+          <div class="stat-item">
+            <span class="stat-label">Accuracy</span>
+            <span class="stat-value">{{ accuracy }}%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Words Learned</span>
+            <span class="stat-value">{{ learnedWordsCount }}</span>
+          </div>
+        </div>
+        <div class="button-group">
+          <button @click="retryQuiz" class="retry">Retry Quiz</button>
+          <button @click="goToLearning" class="learn-more">
+            Learn More Words
+          </button>
+        </div>
       </div>
     </div>
 
     <div class="words-section">
       <div class="words-card">
-        <h3 class="word-title">Incorrect Answers <span class="badge red">{{ wrongAnswers.length }}</span></h3>
+        <h3 class="word-title">
+          Incorrect Answers
+          <span class="badge red">{{ wrongAnswers.length }}</span>
+        </h3>
         <table class="word-table">
           <thead>
             <tr>
@@ -42,31 +62,68 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      wrongAnswers: JSON.parse(localStorage.getItem("wrongAnswers")) || [],
-      correctAnswers: JSON.parse(localStorage.getItem("correctAnswers")) || [],
-      totalWords: JSON.parse(localStorage.getItem("words"))?.length || 0,
-      score: 0 + (JSON.parse(localStorage.getItem("correctAnswers"))?.length || 0) * 10
-    };
-  },
-  methods: {
-    retryQuiz() {
-      this.$router.push("/quiz"); // Restart quiz
-    }
+<script setup>
+import { ref, computed, onMounted } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const wrongAnswers = ref([]);
+const correctAnswers = ref([]);
+const totalWords = ref(0);
+const score = ref(0);
+const learnedWordsCount = ref(0);
+
+// Calculate accuracy percentage
+const accuracy = computed(() => {
+  if (totalWords.value === 0) return 0;
+  return Math.round((correctAnswers.value.length / totalWords.value) * 100);
+});
+
+// Load quiz results and user progress
+function loadResults() {
+  const username = localStorage.getItem("username");
+  if (!username) {
+    router.push("/signin");
+    return;
   }
-};
+
+  // Load quiz progress
+  const savedProgress = localStorage.getItem(`quiz_progress_${username}`);
+  if (savedProgress) {
+    const progress = JSON.parse(savedProgress);
+    score.value = progress.score || 0;
+    correctAnswers.value = progress.correctAnswers || [];
+    wrongAnswers.value = progress.wrongAnswers || [];
+    totalWords.value = progress.words?.length || 0;
+  }
+
+  // Load learned words count
+  const learnedWords = JSON.parse(localStorage.getItem("learnedWords") || "[]");
+  learnedWordsCount.value = learnedWords.length;
+}
+
+function retryQuiz() {
+  router.push("/quiz");
+}
+
+function goToLearning() {
+  router.push("/learning");
+}
+
+onMounted(() => {
+  loadResults();
+});
 </script>
 
 <style scoped>
 .main-content {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .progress-card {
@@ -82,25 +139,76 @@ export default {
 .progress-info {
   display: flex;
   justify-content: space-around;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .big {
   font-size: 2rem;
   font-weight: bold;
+  color: #2a7ab0;
+}
+
+.progress-stats {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: #666;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #2a7ab0;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 button {
-  margin-top: 0.5rem;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 .retry {
-  background: #f4f4f4;
+  background: #2a7ab0;
+  color: white;
+}
+
+.retry:hover {
+  background: #1e5c8a;
+}
+
+.learn-more {
+  background: #f8f9fa;
+  color: #2a7ab0;
+  border: 2px solid #2a7ab0;
+}
+
+.learn-more:hover {
+  background: #e9ecef;
 }
 
 .words-section {
@@ -118,6 +226,9 @@ button {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .badge {
@@ -134,26 +245,39 @@ button {
 .word-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
-.word-table th, .word-table td {
+.word-table th,
+.word-table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 12px;
   text-align: center;
 }
 
 .word-table th {
-  background: #f4f4f4;
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
 }
 
 .wrong {
-  color: red;
+  color: #d9534f;
   font-weight: bold;
 }
 
 .correct {
-  color: green;
+  color: #5cb85c;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .progress-card {
+    max-width: 100%;
+  }
 }
 </style>

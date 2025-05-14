@@ -6,7 +6,98 @@ body {
   padding: 0;
 }
 
-/* Removed #app block that was causing layout issues */
+/* Modern Card Styles */
+.word-card,
+.flip-card,
+.review-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(60, 60, 60, 0.08),
+    0 1.5px 4px rgba(60, 60, 60, 0.04);
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+.word-card:hover,
+.flip-card:hover,
+.review-card:hover {
+  box-shadow: 0 8px 32px rgba(60, 60, 60, 0.16),
+    0 3px 8px rgba(60, 60, 60, 0.08);
+}
+
+/* Modern Button Styles */
+button,
+.correct-btn,
+.mark-learned-btn,
+.pagination-btn,
+.control-btn {
+  border-radius: 24px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+button:active,
+.correct-btn:active,
+.mark-learned-btn:active,
+.pagination-btn:active,
+.control-btn:active {
+  box-shadow: 0 1px 2px rgba(60, 60, 60, 0.08);
+}
+
+/* Modern Input Styles */
+.answer-input {
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.answer-input:focus {
+  border: 1.5px solid #2a7ab0;
+}
+
+/* Improve spacing and layout */
+.learning-system,
+.quiz-container,
+.result-container {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.word-cards,
+.review-cards {
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .word-cards,
+  .review-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .quiz-container,
+  .learning-system {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Add a smooth transition to flips */
+.flip-card-inner,
+.card-inner {
+  transition: transform 0.5s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+/* Footer/Header polish */
+.header,
+.footer {
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
+  border-bottom: 1px solid #e0e0e0;
+}
+.footer {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: none;
+}
 
 /* Keep your link styles */
 a,

@@ -3,12 +3,12 @@ import { createRouter, createWebHistory } from 'vue-router';
 import QuizPage from '@/components/QuizPage.vue';
 import SignIn from '@/components/SignIn.vue';
 import SignUp from '@/components/SignUp.vue';
-import Listening from '../components/Listening.vue';
+import Listening from '@/components/Listening.vue';
 import WordGame from '@/components/WordGame.vue';
 import KazakhAdventure from '@/components/KazakhAdventure.vue';
-import LearningSystem from '../components/LearningSystem.vue';
+import LearningSystem from '@/components/LearningSystem.vue';
 import MainContent from '@/components/QuizResult.vue';
-
+import KazakhCompetitive from '@/components/KazakhCompetitive.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,7 +26,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/WordCreation.vue'),
+      component: () => import('@/views/WordCreation.vue'),
     },
     {
       path: '/courses',
@@ -53,11 +53,15 @@ const router = createRouter({
       name: 'KazakhAdventure',
       component: KazakhAdventure,
     },
-
     {
       path: '/learning',
       name: 'Learning',
       component: LearningSystem,
+    },
+    {
+      path: '/competitive',
+      name: 'KazakhCompetitive',
+      component: KazakhCompetitive,
     },
   ],
 });

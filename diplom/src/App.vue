@@ -2,6 +2,7 @@
 import WebHeader from "./components/WebHeader.vue";
 import WebFooter from "./components/WebFooter.vue";
 import Listening from "./components/Listening.vue"; // Import the Listening component
+import ChatBot from "./components/ChatBot.vue"; // Import the ChatBot component
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import Listening from "./components/Listening.vue"; // Import the Listening comp
       <router-view />
     </main>
     <WebFooter />
+    <ChatBot />
   </div>
 </template>
 
