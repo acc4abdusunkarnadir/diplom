@@ -26,16 +26,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 const isAuthenticated = ref(false);
 const username = ref("");
+const userLevel = ref("");
 
 const checkAuth = () => {
   isAuthenticated.value = localStorage.getItem("isAuthenticated") === "true";
   username.value = localStorage.getItem("username") || "";
+  userLevel.value = localStorage.getItem("userLevel") || "";
 };
 
 onMounted(() => {
@@ -44,37 +46,58 @@ onMounted(() => {
 });
 
 const logout = () => {
-  const username = localStorage.getItem("username");
+  const storedUsername = localStorage.getItem("username");
 
   // Clear all progress-related items
-  if (username) {
-    localStorage.removeItem(`adventure_progress_${username}`);
-    localStorage.removeItem(`competitive_progress_${username}`);
-    localStorage.removeItem(`quiz_progress_${username}`);
-    localStorage.removeItem(`last_login_${username}`);
+  if (storedUsername) {
+    localStorage.removeItem(`adventure_progress_${storedUsername}`);
+    localStorage.removeItem(`competitive_progress_${storedUsername}`);
+    localStorage.removeItem(`quiz_progress_${storedUsername}`);
+    localStorage.removeItem(`last_login_${storedUsername}`);
     localStorage.removeItem(`learnedWords`);
   }
 
   // Clear authentication data
   localStorage.removeItem("isAuthenticated");
   localStorage.removeItem("username");
-  localStorage.removeItem("user");
+  localStorage.removeItem("userLevel");
 
   isAuthenticated.value = false;
   username.value = "";
+  userLevel.value = "";
   router.push("/signin");
 };
 
-const links = ref([
-  { name: "Нәтиже", path: "/" },
-  { name: "Квиз", path: "/courses" },
-  { name: "сөздік қорлар", path: "/about" },
-  { name: "хабарласу", path: "/contact" },
-  { name: "Listening", path: "/listening" },
-  { name: "Adventure", path: "/adventure" },
-  { name: "Learning System", path: "/learning" },
-  { name: "Competitive", path: "/competitive" },
-]);
+const links = computed(() => {
+  const allLinks = [
+    { name: "Нәтиже", path: "/" },
+    { name: "Квиз", path: "/courses" },
+    { name: "сөздік қорлар", path: "/about", minLevel: "B1" },
+    { name: "хабарласу", path: "/contact", minLevel: "B1" },
+    { name: "Listening", path: "/listening", minLevel: "B1" },
+    { name: "Adventure", path: "/adventure", minLevel: "B1" },
+    { name: "Learning System", path: "/learning" },
+    { name: "Competitive", path: "/competitive", minLevel: "B1" },
+  ];
+
+  if (!isAuthenticated.value) return [];
+
+  const levelHierarchy = {
+    A1: 1,
+    A2: 2,
+    B1: 3,
+    B2: 4,
+    C1: 5,
+    C2: 6,
+  };
+
+  const userLevelValue = levelHierarchy[userLevel.value] || 0;
+
+  return allLinks.filter((link) => {
+    if (!link.minLevel) return true;
+    return levelHierarchy[link.minLevel] <= userLevelValue;
+  });
+});
 </script>
 
 <style scoped>

@@ -18,21 +18,25 @@ const router = createRouter({
       path: '/',
       name: 'Home',
       component: MainContent,
+      meta: { requiresAuth: true }
     },
     {
       path: '/listening',
       name: 'Listening',
       component: Listening,
+      meta: { requiresAuth: true, minLevel: 'B1' }
     },
     {
       path: '/about',
       name: 'about',
       component: () => import('@/views/WordCreation.vue'),
+      meta: { requiresAuth: true, minLevel: 'B1' }
     },
     {
       path: '/courses',
       name: 'courses',
       component: QuizPage,
+      meta: { requiresAuth: true }
     },
     {
       path: '/signin',
@@ -48,11 +52,13 @@ const router = createRouter({
       path: '/wordgame',
       name: 'WordGame',
       component: WordGame,
+      meta: { requiresAuth: true, minLevel: 'B1' }
     },
     {
       path: '/adventure',
       name: 'KazakhAdventure',
       component: KazakhAdventure,
+      meta: { requiresAuth: true, minLevel: 'B1' }
     },
     {
       path: '/learning',
@@ -64,6 +70,7 @@ const router = createRouter({
       path: '/competitive',
       name: 'KazakhCompetitive',
       component: KazakhCompetitive,
+      meta: { requiresAuth: true, minLevel: 'B1' }
     },
     {
       path: '/level-selection',
@@ -83,6 +90,25 @@ router.beforeEach((to, from, next) => {
     next("/signin");
   } else if (to.meta.requiresLevel && !userLevel) {
     next("/level-selection");
+  } else if (to.meta.minLevel && userLevel) {
+    // Define level hierarchy
+    const levelHierarchy = {
+      'A1': 1,
+      'A2': 2,
+      'B1': 3,
+      'B2': 4,
+      'C1': 5,
+      'C2': 6
+    };
+
+    const requiredLevel = levelHierarchy[to.meta.minLevel];
+    const userLevelValue = levelHierarchy[userLevel];
+
+    if (userLevelValue < requiredLevel) {
+      next("/learning"); // Redirect to learning system if level is too low
+    } else {
+      next();
+    }
   } else {
     next();
   }

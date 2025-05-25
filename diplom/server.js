@@ -6,8 +6,19 @@ import OpenAI from "openai";
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+// Configure CORS
+app.use(cors({
+    origin: 'http://localhost:5173', // Vue dev server default port
+    credentials: true
+}));
+
 app.use(express.json());
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
+});
 
 // MongoDB Schema for users with level
 const UserSchema = new mongoose.Schema({
@@ -184,6 +195,6 @@ app.get("/api/leaderboard/:level", async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });

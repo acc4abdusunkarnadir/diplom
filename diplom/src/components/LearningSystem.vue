@@ -18,61 +18,66 @@
       </button>
     </div>
 
-    <div class="word-cards-container">
-      <div class="word-cards">
-        <div
-          v-for="(word, index) in currentWords"
-          :key="word.id"
-          class="word-card"
-          :class="{ learned: learnedWords.has(word.id) }"
-        >
+    <div v-if="!allWords.length" class="no-words">Loading words...</div>
+
+    <template v-else>
+      <div class="word-cards-container">
+        <div class="word-cards">
           <div
-            class="card-inner"
-            :class="{ 'is-flipped': isFlipped === index }"
-            @click="toggleFlip(index)"
-          >
-            <div class="card-front">
-              <h3>{{ word.kazakh }}</h3>
-            </div>
-            <div class="card-back">
-              <h3>{{ word.english }}</h3>
-            </div>
-          </div>
-          <button
-            class="mark-learned-btn"
-            @click.stop="toggleLearned(word.id)"
+            v-for="(word, index) in currentWords"
+            :key="word.id"
+            class="word-card"
             :class="{ learned: learnedWords.has(word.id) }"
           >
-            {{ learnedWords.has(word.id) ? "Learned" : "Mark as Learned" }}
-          </button>
+            <div
+              class="card-inner"
+              :class="{ 'is-flipped': isFlipped === index }"
+              @click="toggleFlip(index)"
+            >
+              <div class="card-front">
+                <h3>{{ word.kazakh }}</h3>
+              </div>
+              <div class="card-back">
+                <h3>{{ word.english }}</h3>
+              </div>
+            </div>
+            <button
+              class="mark-learned-btn"
+              @click.stop="toggleLearned(word.id)"
+              :class="{ learned: learnedWords.has(word.id) }"
+            >
+              {{ learnedWords.has(word.id) ? "Learned" : "Mark as Learned" }}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pagination">
-      <button
-        @click="currentPage--"
-        :disabled="currentPage === 1"
-        class="pagination-btn"
-      >
-        Previous
-      </button>
-      <span class="page-info">Page {{ currentPage }} of {{ totalPages }}</span>
-      <button
-        @click="currentPage++"
-        :disabled="currentPage >= totalPages"
-        class="pagination-btn"
-      >
-        Next
-      </button>
-    </div>
+      <div v-if="totalPages > 1" class="pagination">
+        <button
+          @click="currentPage--"
+          :disabled="currentPage === 1"
+          class="pagination-btn"
+        >
+          Previous
+        </button>
+        <span class="page-info"
+          >Page {{ currentPage }} of {{ totalPages }}</span
+        >
+        <button
+          @click="currentPage++"
+          :disabled="currentPage >= totalPages"
+          class="pagination-btn"
+        >
+          Next
+        </button>
+      </div>
+    </template>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
-import dataset from "../dataset.json";
 
 const router = useRouter();
 const isAuthenticated = ref(false);
@@ -85,47 +90,100 @@ const learnedWords = ref(new Set());
 const showLearned = ref(false);
 const currentPage = ref(1);
 const wordsPerPage = ref(10);
+const userLevel = ref(localStorage.getItem("userLevel") || "A1");
 
 // Initialize computed properties
 const learnedWordsCount = computed(() => learnedWords.value.size);
 const totalPages = computed(() =>
   Math.ceil(totalWords.value / wordsPerPage.value)
 );
+
 const currentWords = computed(() => {
+  console.log("Computing currentWords");
+  console.log("allWords.value:", allWords.value);
+  console.log("currentPage:", currentPage.value);
+  console.log("wordsPerPage:", wordsPerPage.value);
+
   const start = (currentPage.value - 1) * wordsPerPage.value;
   const end = start + wordsPerPage.value;
   let words = allWords.value.slice(start, end);
+
+  console.log("Sliced words:", words);
+
   if (showLearned.value) {
     words = words.filter((word) => learnedWords.value.has(word.id));
   }
+
+  console.log("Final currentWords:", words);
   return words;
 });
 
 // Check authentication and initialize data
 onMounted(async () => {
+  console.log("Component mounted");
   isAuthenticated.value = localStorage.getItem("isAuthenticated") === "true";
+  console.log("Is authenticated:", isAuthenticated.value);
+
   if (!isAuthenticated.value) {
     router.push("/signin");
     return;
   }
 
+  console.log("User level:", userLevel.value);
   await fetchWords();
   loadProgress();
-  loadWords();
+
+  // Reset currentPage if it's out of bounds after loading words and progress
+  if (currentPage.value > totalPages.value) {
+    console.log(
+      `currentPage (${currentPage.value}) is out of bounds for totalPages (${totalPages.value}). Resetting to 1.`
+    );
+    currentPage.value = 1;
+  }
+  console.log("Initial currentPage after checks:", currentPage.value);
 });
 
 async function fetchWords() {
   try {
-    const response = dataset;
-    if (Array.isArray(response)) {
-      allWords.value = response.map((word, index) => ({
-        ...word,
-        id: index.toString(),
-      }));
-      totalWords.value = allWords.value.length;
+    console.log("Starting fetchWords");
+    console.log("Dataset type:", typeof dataset);
+    console.log("Dataset length:", dataset.length);
+    console.log("User level:", userLevel.value);
+
+    if (!Array.isArray(dataset)) {
+      console.error("Dataset is not an array");
+      return;
     }
+
+    // For A1/A2 levels, take first 100 words
+    // For other levels, take more words
+    const maxWords = getWordCount(userLevel.value);
+    console.log("Max words for level:", maxWords);
+
+    // Ensure we don't try to slice more words than available
+    const actualMaxWords = Math.min(maxWords, dataset.length);
+    console.log(
+      "Actual max words (considering dataset length):",
+      actualMaxWords
+    );
+
+    const words = dataset.slice(0, actualMaxWords).map((word, index) => ({
+      ...word,
+      id: index.toString(),
+      level: userLevel.value,
+    }));
+
+    console.log("Processed words count:", words.length);
+    console.log("First few words:", words.slice(0, 3));
+
+    allWords.value = [...words]; // Create a new array to ensure reactivity
+    totalWords.value = words.length;
+
+    console.log("allWords.value length:", allWords.value.length);
+    console.log("totalWords:", totalWords.value);
+    // We don't log currentWords here as it depends on currentPage, which might be adjusted next.
   } catch (error) {
-    console.error("Error loading words:", error);
+    console.error("Error in fetchWords:", error);
   }
 }
 
@@ -154,28 +212,26 @@ function loadProgress() {
   const savedLearnedWords = localStorage.getItem("learnedWords");
   const savedPage = localStorage.getItem("currentPage");
 
+  console.log("Loading progress...");
+  console.log("Saved learned words:", savedLearnedWords);
+  console.log("Saved page:", savedPage);
+
   if (savedLearnedWords) {
     learnedWords.value = new Set(JSON.parse(savedLearnedWords));
   }
   if (savedPage) {
-    currentPage.value = parseInt(savedPage);
+    // Ensure savedPage is a valid number before parsing
+    const parsedPage = parseInt(savedPage);
+    if (!isNaN(parsedPage) && parsedPage >= 1) {
+      currentPage.value = parsedPage;
+    } else {
+      console.warn("Invalid saved page value:", savedPage);
+      currentPage.value = 1; // Default to first page
+    }
+  } else {
+    currentPage.value = 1; // Default to first page if no saved page
   }
-}
-
-function loadWords() {
-  // Get learned words from localStorage
-  const learned = new Set(
-    JSON.parse(localStorage.getItem("learnedWords") || "[]")
-  );
-  // Add IDs to dataset words
-  const allWords = dataset.map((word, index) => ({
-    ...word,
-    id: index.toString(),
-  }));
-  // Only use words NOT learned
-  const words = allWords.filter((word) => !learned.has(word.id));
-  allWords.value = words;
-  totalWords.value = words.length;
+  console.log("currentPage after loading:", currentPage.value);
 }
 </script>
 
@@ -388,5 +444,12 @@ function loadWords() {
   background: #e5e6e7;
   z-index: 1000;
   /* ...other styles... */
+}
+
+.no-words {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 2rem 0;
 }
 </style>

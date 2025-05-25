@@ -63,20 +63,28 @@ async function handleSignUp() {
         password: password.value,
         level: level.value,
       }),
+      credentials: "include",
     });
 
-    if (response.ok) {
-      localStorage.setItem("username", username.value);
-      localStorage.setItem("userLevel", level.value);
-      localStorage.setItem("isAuthenticated", "true");
-      router.push("/learning");
-    } else {
+    if (!response.ok) {
       const data = await response.json();
-      alert(data.error || "Failed to sign up");
+      throw new Error(data.error || "Failed to sign up");
     }
+
+    const data = await response.json();
+    localStorage.setItem("username", username.value);
+    localStorage.setItem("userLevel", level.value);
+    localStorage.setItem("isAuthenticated", "true");
+    router.push("/learning");
   } catch (error) {
     console.error("Signup error:", error);
-    alert("An error occurred during sign up");
+    if (error.message.includes("Failed to fetch")) {
+      alert(
+        "Cannot connect to server. Please make sure the server is running."
+      );
+    } else {
+      alert(error.message || "An error occurred during sign up");
+    }
   }
 }
 </script>
