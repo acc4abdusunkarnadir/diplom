@@ -79,6 +79,47 @@
 import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
+// Hardcoded dataset
+const dataset = [
+  { kazakh: "сәлем", english: "hello" },
+  { kazakh: "қалайсыз", english: "how are you" },
+  { kazakh: "рахмет", english: "thank you" },
+  { kazakh: "жақсы", english: "good" },
+  { kazakh: "жаман", english: "bad" },
+  { kazakh: "қош келдіңіз", english: "welcome" },
+  { kazakh: "қош болыңыз", english: "goodbye" },
+  { kazakh: "бәрекелді", english: "bless you" },
+  { kazakh: "кешіріңіз", english: "excuse me" },
+  { kazakh: "жоқ", english: "no" },
+  { kazakh: "иә", english: "yes" },
+  { kazakh: "білмеймін", english: "I don't know" },
+  { kazakh: "түсінікті", english: "understood" },
+  { kazakh: "қайырлы таң", english: "good morning" },
+  { kazakh: "қайырлы кеш", english: "good evening" },
+  { kazakh: "қайырлы түн", english: "good night" },
+  { kazakh: "сәттілік", english: "good luck" },
+  { kazakh: "жақсы оқыңыз", english: "good reading" },
+  { kazakh: "жақсы жол", english: "good journey" },
+  { kazakh: "жақсы демалыс", english: "good rest" },
+];
+
+function getWordCount(level) {
+  switch (level) {
+    case "A1":
+      return 100;
+    case "A2":
+      return 200;
+    case "B1":
+      return 300;
+    case "B2":
+      return 400;
+    case "C1":
+      return 500;
+    default:
+      return 100;
+  }
+}
+
 const router = useRouter();
 const isAuthenticated = ref(false);
 const allWords = ref([]);
