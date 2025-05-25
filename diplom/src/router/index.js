@@ -9,6 +9,7 @@ import KazakhAdventure from '@/components/KazakhAdventure.vue';
 import LearningSystem from '@/components/LearningSystem.vue';
 import MainContent from '@/components/QuizResult.vue';
 import KazakhCompetitive from '@/components/KazakhCompetitive.vue';
+import LevelSelection from '../components/LevelSelection.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,13 +58,34 @@ const router = createRouter({
       path: '/learning',
       name: 'Learning',
       component: LearningSystem,
+      meta: { requiresAuth: true, requiresLevel: true },
     },
     {
       path: '/competitive',
       name: 'KazakhCompetitive',
       component: KazakhCompetitive,
     },
+    {
+      path: '/level-selection',
+      name: 'level-selection',
+      component: LevelSelection,
+      meta: { requiresAuth: true },
+    },
   ],
+});
+
+// Navigation guard
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+  const userLevel = localStorage.getItem("userLevel");
+
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next("/signin");
+  } else if (to.meta.requiresLevel && !userLevel) {
+    next("/level-selection");
+  } else {
+    next();
+  }
 });
 
 export default router;
