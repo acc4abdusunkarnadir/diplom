@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import OpenAI from "openai";
+import fetch from "node-fetch";
 
 const app = express();
 const PORT = 3000;
@@ -208,6 +209,45 @@ app.get("/api/leaderboard/:level", async (req, res) => {
     } catch (error) {
         console.error("Get leaderboard error:", error);
         res.status(500).json({ error: "Failed to get leaderboard" });
+    }
+});
+
+// Grammar check endpoint
+app.post("/api/grammar-check", async (req, res) => {
+    try {
+        const { text } = req.body;
+
+        if (!text) {
+            return res.status(400).json({ error: "Text is required" });
+        }
+
+        console.log('Sending request to Python service:', { text: text.substring(0, 100) + '...' });
+
+        const response = await fetch('http://127.0.0.1:5000/check-grammar', {
+            method: 'POST',
+         headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ text }),
+        });
+
+        console.log('Python service response status:', response.status);
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Python service error response:', errorText);
+            throw new Error(`Failed to get response from grammar service: ${errorText}`);
+        }
+
+        const data = await response.json();
+        console.log('Python service response:', data);
+        res.json(data);
+    } catch (error) {
+        console.error("Grammar check error:", error);
+        res.status(500).json({
+            error: "Failed to check grammar",
+            details: error.message
+        });
     }
 });
 

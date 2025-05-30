@@ -3,7 +3,11 @@
     <h1>Word Learning Game</h1>
     <div v-if="currentWordIndex < words.length" class="game-section">
       <p class="word-display">{{ words[currentWordIndex].kazakh }}</p>
-      <input v-model="userInput" placeholder="Type the translation" class="word-input" />
+      <input
+        v-model="userInput"
+        placeholder="Type the translation"
+        class="word-input"
+      />
       <button @click="checkWord" class="submit-button">Submit</button>
     </div>
     <div v-else class="game-over">
@@ -19,22 +23,25 @@ export default {
   data() {
     return {
       words: [
-        { kazakh: 'Сәлем', english: 'Hello' },
-        { kazakh: 'Кітап', english: 'Book' },
+        { kazakh: "Сәлем", english: "Hello" },
+        { kazakh: "Кітап", english: "Book" },
         // Add more words as needed
       ],
       currentWordIndex: 0,
-      userInput: '',
+      userInput: "",
       score: 0,
     };
   },
   methods: {
     checkWord() {
       const currentWord = this.words[this.currentWordIndex];
-      if (this.userInput.trim().toLowerCase() === currentWord.english.toLowerCase()) {
+      if (
+        this.userInput.trim().toLowerCase() ===
+        currentWord.english.toLowerCase()
+      ) {
         this.score += 10;
       }
-      this.userInput = '';
+      this.userInput = "";
       this.currentWordIndex++;
     },
     restartGame() {
@@ -50,7 +57,7 @@ export default {
   text-align: center;
   padding: 20px;
   background-color: #f0f0f0;
-  font-family: 'Press Start 2P', cursive; /* Use a pixelated font */
+  font-family: "Press Start 2P", cursive; /* Use a pixelated font */
 }
 
 .game-section {
@@ -69,22 +76,22 @@ export default {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 200px;
-  font-family: 'Press Start 2P', cursive; /* Use a pixelated font */
+  font-family: "Press Start 2P", cursive; /* Use a pixelated font */
 }
 
 .submit-button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive; /* Use a pixelated font */
+  font-family: "Press Start 2P", cursive; /* Use a pixelated font */
 }
 
 .submit-button:hover {
-  background-color: #388E3C;
+  background-color: #388e3c;
 }
 
 .game-over {
@@ -93,15 +100,15 @@ export default {
 
 .restart-button {
   padding: 10px 20px;
-  background-color: #007ACC;
+  background-color: #007acc;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive; /* Use a pixelated font */
+  font-family: "Press Start 2P", cursive; /* Use a pixelated font */
 }
 
 .restart-button:hover {
-  background-color: #005F99;
+  background-color: #005f99;
 }
 </style>

@@ -10,6 +10,7 @@ import LearningSystem from '@/components/LearningSystem.vue';
 import MainContent from '@/components/QuizResult.vue';
 import KazakhCompetitive from '@/components/KazakhCompetitive.vue';
 import LevelSelection from '../components/LevelSelection.vue';
+import GrammarChecker from '@/components/GrammarChecker.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -77,6 +78,12 @@ const router = createRouter({
       name: 'level-selection',
       component: LevelSelection,
       meta: { requiresAuth: true },
+    },
+    {
+      path: '/grammar-check',
+      name: 'GrammarChecker',
+      component: GrammarChecker,
+      meta: { requiresAuth: true }
     },
   ],
 });
