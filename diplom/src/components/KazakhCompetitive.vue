@@ -207,7 +207,9 @@ function restartQuiz() {
 
 async function submitScore() {
   const username = localStorage.getItem("username");
-  if (!username) {
+  const userLevel = localStorage.getItem("userLevel");
+
+  if (!username || !userLevel) {
     router.push("/signin");
     return;
   }
@@ -222,30 +224,44 @@ async function submitScore() {
         username: username,
         score: score.value,
         quizType: "competitive",
+        level: userLevel,
         date: new Date().toISOString(),
       }),
     });
 
     if (response.ok) {
       alert("Score submitted successfully!");
-      loadLeaderboard();
+      await loadLeaderboard(); // Reload leaderboard after submission
     } else {
-      alert("Failed to submit score. Please try again.");
+      const errorData = await response.json();
+      alert(errorData.error || "Failed to submit score. Please try again.");
     }
   } catch (error) {
     console.error("Error submitting score:", error);
-    alert("Error submitting score. Please try again.");
+    if (error.message.includes("Failed to fetch")) {
+      alert(
+        "Cannot connect to server. Please make sure the server is running."
+      );
+    } else {
+      alert("Error submitting score. Please try again.");
+    }
   }
 }
 
 async function loadLeaderboard() {
+  const userLevel = localStorage.getItem("userLevel");
+  if (!userLevel) return;
+
   try {
     const response = await fetch(
-      "http://localhost:3000/api/scores/competitive"
+      `http://localhost:3000/api/leaderboard/${userLevel}`
     );
     if (response.ok) {
       const data = await response.json();
       leaderboard.value = data.sort((a, b) => b.score - a.score).slice(0, 10);
+    } else {
+      const errorData = await response.json();
+      console.error("Error loading leaderboard:", errorData.error);
     }
   } catch (error) {
     console.error("Error loading leaderboard:", error);

@@ -65,6 +65,11 @@ app.post("/api/signup", async (req, res) => {
     try {
         const { username, password, level } = req.body;
 
+        // Validate required fields
+        if (!username || !password || !level) {
+            return res.status(400).json({ error: "All fields are required" });
+        }
+
         // Validate level
         if (!['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(level)) {
             return res.status(400).json({ error: "Invalid level" });
@@ -84,7 +89,13 @@ app.post("/api/signup", async (req, res) => {
         });
 
         await user.save();
-        res.json({ message: "User created successfully" });
+        res.json({
+            message: "User created successfully",
+            user: {
+                username: user.username,
+                level: user.level
+            }
+        });
     } catch (error) {
         console.error("Signup error:", error);
         res.status(500).json({ error: "Failed to create user" });
@@ -96,9 +107,14 @@ app.post("/api/signin", async (req, res) => {
     try {
         const { username, password } = req.body;
 
+        // Validate required fields
+        if (!username || !password) {
+            return res.status(400).json({ error: "Username and password are required" });
+        }
+
         const user = await User.findOne({ username, password }); // Note: In production, use proper password comparison
         if (!user) {
-            return res.status(401).json({ error: "Invalid credentials" });
+            return res.status(401).json({ error: "Invalid username or password" });
         }
 
         res.json({

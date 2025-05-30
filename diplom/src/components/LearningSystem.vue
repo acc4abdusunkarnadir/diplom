@@ -78,46 +78,30 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import dataset from "../dataset.json";
 
-// Hardcoded dataset
-const dataset = [
-  { kazakh: "сәлем", english: "hello" },
-  { kazakh: "қалайсыз", english: "how are you" },
-  { kazakh: "рахмет", english: "thank you" },
-  { kazakh: "жақсы", english: "good" },
-  { kazakh: "жаман", english: "bad" },
-  { kazakh: "қош келдіңіз", english: "welcome" },
-  { kazakh: "қош болыңыз", english: "goodbye" },
-  { kazakh: "бәрекелді", english: "bless you" },
-  { kazakh: "кешіріңіз", english: "excuse me" },
-  { kazakh: "жоқ", english: "no" },
-  { kazakh: "иә", english: "yes" },
-  { kazakh: "білмеймін", english: "I don't know" },
-  { kazakh: "түсінікті", english: "understood" },
-  { kazakh: "қайырлы таң", english: "good morning" },
-  { kazakh: "қайырлы кеш", english: "good evening" },
-  { kazakh: "қайырлы түн", english: "good night" },
-  { kazakh: "сәттілік", english: "good luck" },
-  { kazakh: "жақсы оқыңыз", english: "good reading" },
-  { kazakh: "жақсы жол", english: "good journey" },
-  { kazakh: "жақсы демалыс", english: "good rest" },
-];
+// Get words based on level
+function getWordsForLevel(level) {
+  const words = dataset.map((word, index) => ({
+    ...word,
+    id: index.toString(),
+    level: level,
+  }));
 
-function getWordCount(level) {
-  switch (level) {
-    case "A1":
-      return 100;
-    case "A2":
-      return 200;
-    case "B1":
-      return 300;
-    case "B2":
-      return 400;
-    case "C1":
-      return 500;
-    default:
-      return 100;
-  }
+  // For A1 level, take first 100 words
+  // For A2 level, take next 100 words
+  // For B1 level, take next 100 words
+  // And so on...
+  const startIndex =
+    {
+      A1: 0,
+      A2: 100,
+      B1: 200,
+      B2: 300,
+      C1: 400,
+    }[level] || 0;
+
+  return words.slice(startIndex, startIndex + 100);
 }
 
 const router = useRouter();
@@ -187,42 +171,17 @@ onMounted(async () => {
 async function fetchWords() {
   try {
     console.log("Starting fetchWords");
-    console.log("Dataset type:", typeof dataset);
-    console.log("Dataset length:", dataset.length);
     console.log("User level:", userLevel.value);
 
-    if (!Array.isArray(dataset)) {
-      console.error("Dataset is not an array");
-      return;
-    }
+    // Get words for the current level
+    const words = getWordsForLevel(userLevel.value);
+    console.log("Words for level:", words.length);
 
-    // For A1/A2 levels, take first 100 words
-    // For other levels, take more words
-    const maxWords = getWordCount(userLevel.value);
-    console.log("Max words for level:", maxWords);
-
-    // Ensure we don't try to slice more words than available
-    const actualMaxWords = Math.min(maxWords, dataset.length);
-    console.log(
-      "Actual max words (considering dataset length):",
-      actualMaxWords
-    );
-
-    const words = dataset.slice(0, actualMaxWords).map((word, index) => ({
-      ...word,
-      id: index.toString(),
-      level: userLevel.value,
-    }));
-
-    console.log("Processed words count:", words.length);
-    console.log("First few words:", words.slice(0, 3));
-
-    allWords.value = [...words]; // Create a new array to ensure reactivity
+    allWords.value = [...words];
     totalWords.value = words.length;
 
     console.log("allWords.value length:", allWords.value.length);
     console.log("totalWords:", totalWords.value);
-    // We don't log currentWords here as it depends on currentPage, which might be adjusted next.
   } catch (error) {
     console.error("Error in fetchWords:", error);
   }

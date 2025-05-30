@@ -34,24 +34,26 @@ export default {
   methods: {
     async signIn() {
       try {
-        const response = await fetch("http://localhost:3000/api/users/login", {
+        const response = await fetch("http://localhost:3000/api/signin", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(this.user),
+          credentials: "include",
         });
         if (response.ok) {
           const data = await response.json();
-          const username = data.username;
+          const username = data.user.username;
+          const level = data.user.level;
 
           // Clear any existing data first
           localStorage.clear();
 
-          // Initialize new session
-          localStorage.setItem("user", JSON.stringify(data));
-          localStorage.setItem("isAuthenticated", "true");
+          // Initialize new session with consistent data structure
           localStorage.setItem("username", username);
+          localStorage.setItem("userLevel", level);
+          localStorage.setItem("isAuthenticated", "true");
           localStorage.setItem("learnedWords", "[]");
           localStorage.setItem(
             `last_login_${username}`,
@@ -59,13 +61,20 @@ export default {
           );
 
           window.dispatchEvent(new Event("storage")); // Trigger storage event for WebHeader
-          this.$router.push("/");
+          this.$router.push("/learning");
         } else {
-          alert("Invalid username or password.");
+          const errorData = await response.json();
+          alert(errorData.error || "Invalid username or password.");
         }
       } catch (error) {
         console.error("Error signing in:", error);
-        alert("Error signing in.");
+        if (error.message.includes("Failed to fetch")) {
+          alert(
+            "Cannot connect to server. Please make sure the server is running."
+          );
+        } else {
+          alert("Error signing in.");
+        }
       }
     },
   },
